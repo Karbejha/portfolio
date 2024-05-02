@@ -1,14 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend('re_T7zw4hDj_AmKaQbKH1pkpEJ6osgFEGX4L');
-resend.apiKeys.list();
-resend.emails.send({
-  from: 'onboarding@resend.dev',
-  to: 'mohamad.karbejha@gmail.com',
-  subject: 'Hello World',
-  html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req, res) {
