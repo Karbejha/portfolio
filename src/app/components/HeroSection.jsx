@@ -22,7 +22,7 @@ const HeroSection = () => {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Mohamad Karbejha",
+                "Mohamad",
                 1000,
                 "Web Developer",
                 1000,
@@ -37,8 +37,9 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+          Full Stack Web Developer specializing in HTML, CSS, JavaScript, React, NextJS, Node.js,
+MongoDB and Python Django, OpenCV, NumPy, Tkinter, PyQt5. Proficient in database
+technologies SQL and IT system administration. Multilingual in English, Turkish, and Arabic
           </p>
           <div>
             <Link
@@ -63,7 +64,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4  mt-2 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] relative">
+          <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[350px] lg:h-[350px] relative">
             <Image
               src="/images/hero-image.png"
               alt="heros image"
