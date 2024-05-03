@@ -15,10 +15,12 @@ const TabButton = ({ active, selectTab, children }) => {
         {children}
       </p>
       <motion.div
-        animate={active ? "active" : "default"}
+        layout
+        initial={{ width: 0 }} // Set initial width on server
+        animate={{ width: active ? "calc(100% - 0.75rem)" : 0 }}
         variants={variants}
         className="h-1 bg-primary-500 mt-2 mr-3"
-      ></motion.div>
+      />
     </button>
   );
 };
