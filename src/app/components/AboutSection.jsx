@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import Link from "next/link";
 
 const TAB_DATA = [
   {
@@ -9,22 +10,27 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>Python ( include: Django , PyQt5, Tkinter , NumPy , OpenCV ... )</li>
+        <li>React.js</li>
+        <li>Next.js</li>
+        <li>Node.js</li>        
         <li>JavaScript</li>
-        <li>React</li>
+        <li>Express.js</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+        <li>MySQL-SQL</li>
       </ul>
     ),
+    
   },
   {
     title: "Education",
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Computer Engineering-DOĞUŞ ÜNİVERSİTY- Istanbul/Turkey</li>
+        <li>Robot Engineering (Double Major)-DOĞUŞ ÜNİVERSİTY- Istanbul/Turkey</li>
+        <li>Fullstack Web Development-Re:Coded</li>
       </ul>
     ),
   },
@@ -33,8 +39,13 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Re:Coded</li>
+        <Link href={"https://www.credential.net/26f7bbd2-4097-4981-a029-87786aeec745"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Fullstack Web Development Bootcamp</Link><br></br>
+        <li>Coursera:</li>
+        <Link href={"https://www.coursera.org/account/accomplishments/certificate/LJXC9KQGFJS5"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Meta - Fullstack Web Developer (Django framework)</Link><br></br>
+        <Link href={"https://www.coursera.org/account/accomplishments/certificate/A78T3X9FCYBX"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Web Application Technologies and Django</Link><br></br>
+        <Link href={"https://www.coursera.org/account/accomplishments/certificate/C5YJ8WZ78HZL"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google - The Bits and Bytes of Computer Networking</Link><br></br>
+        <Link href={"https://www.coursera.org/account/accomplishments/certificate/S2KD7PSVQEW5"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google - Technical Support Fundamentals</Link><br></br>
       </ul>
     ),
   },
