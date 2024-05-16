@@ -35,10 +35,10 @@ const projectsData = [
   {
     id: 4,
     title: "Food Ordering Application",
-    description: "Project 4 description",
+    description: "This is a food ordering application built with React.js and Next.js in Front-end , Node.js and MongoDB in Back-end.",
     image: "/images/projects/4.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/202309-EKTA-JO-FSW/capstone-room-8-1",
     previewUrl: "/",
   },
   {
@@ -52,10 +52,10 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
+    title: "YouTube Video Downloader",
+    description: "Desktop application to download YouTube videos, built with Tkinter and Python.",
     image: "/images/projects/6.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -99,6 +99,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="Mobile"
           isSelected={tag === "Mobile"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Desktop"
+          isSelected={tag === "Desktop"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
