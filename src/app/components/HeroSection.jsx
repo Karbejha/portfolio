@@ -37,9 +37,9 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          Full Stack Web Developer specializing in HTML, CSS, JavaScript, React, NextJS, Node.js,
-MongoDB and Python Django, OpenCV, NumPy, Tkinter, PyQt5. Proficient in database
-technologies SQL and IT system administration. Multilingual in English, Turkish, and Arabic
+            Full Stack Web Developer specializing in HTML, CSS, JavaScript, React, NextJS, Node.js,
+            MongoDB and Python Django, OpenCV, NumPy, Tkinter, PyQt5. Proficient in database
+            technologies SQL and IT system administration. Multilingual in English, Turkish, and Arabic
           </p>
           <div>
             <Link
@@ -62,16 +62,18 @@ technologies SQL and IT system administration. Multilingual in English, Turkish,
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-4  mt-2 lg:mt-0"
+          className="col-span-4 mt-2 lg:mt-0 flex justify-center sm:justify-end"
         >
-          <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[350px] lg:h-[350px] relative">
-            <Image
-              src="/images/hero-image.png"
-              alt="heros image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
-            />
+          <div className="flex justify-center items-center">
+            <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[350px] lg:h-[350px] relative flex justify-center items-center">
+              <Image
+                src="/images/hero-image.png"
+                alt="hero image"
+                className="w-full h-full object-cover rounded-full"
+                width={300}
+                height={300}
+              />
+            </div>
           </div>
         </motion.div>
       </div>
