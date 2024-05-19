@@ -1,36 +1,40 @@
 import nodemailer from 'nodemailer';
 
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { email, subject, message } = req.body;
+export async function POST(req, res) {
+  try {
+    const { email, subject, message } = await req.json();
 
-    // Create a transporter object using SMTP transport
-    let transporter = nodemailer.createTransport({
-      service: 'Gmail', // You can use other services as well like SendGrid, Mailgun, etc.
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail',
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email password or an app-specific password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Email options
-    let mailOptions = {
-      from: email, // Sender address
-      to: 'mohmad.karbejha@gmail.com', // List of recipients
-      subject: subject, // Subject line
-      text: message, // Plain text body
-      html: `<p>${message}</p>`, // HTML body
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
+      subject: subject,
+      text: `From: ${email}\n\n${message}`,
     };
 
-    // Send email
-    try {
-      await transporter.sendMail(mailOptions);
-      res.status(200).json({ message: 'Email sent successfully!' });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ message: 'Error sending email.' });
-    }
-  } else {
-    res.status(405).json({ message: 'Method not allowed' });
+    const confirmationMailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Confirmation: Message Received',
+      text: 'Thank you for your message. We have received it and will get back to you shortly.',
+    };
+
+    // Send mail to site owner
+    await transporter.sendMail(mailOptions);
+
+    // Send confirmation mail to sender
+    await transporter.sendMail(confirmationMailOptions);
+
+    res.status(200).json({ message: 'Email sent successfully!' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
