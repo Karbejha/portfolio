@@ -1,56 +1,40 @@
-const nodemailer = require("nodemailer");
+import nodemailer from 'nodemailer';
 
-export default async (req, res) => {
+export async function POST(req, res) {
+  try {
+    const { email, subject, message } = await req.json();
 
-const { firstName, lastName, email, message } = JSON.parse(req.body);
-
-const transporter = nodemailer.createTransport({
-    port: 465,
-    host: "smtp.gmail.com",
-    auth: {
-        user: "mohamad.karbejha@gmail.com",
-        pass: "Real-madrid-23",
-    },
-    secure: true,
-});
-
-await new Promise((resolve, reject) => {
-    // verify connection configuration
-    transporter.verify(function (error, success) {
-        if (error) {
-            console.log(error);
-            reject(error);
-        } else {
-            console.log("Server is ready to take our messages");
-            resolve(success);
-        }
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
-});
 
-const mailData = {
-    from: {
-        name: `${firstName} ${lastName}`,
-        address: "mohamad.karbejha@gmail.com",
-    },
-    replyTo: email,
-    to: email,
-    subject: `form message`,
-    text: message,
-    html: `${message}`,
-};
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
+      subject: subject,
+      text: `From: ${email}\n\n${message}`,
+    };
 
-await new Promise((resolve, reject) => {
-    // send mail
-    transporter.sendMail(mailData, (err, info) => {
-        if (err) {
-            console.error(err);
-            reject(err);
-        } else {
-            console.log(info);
-            resolve(info);
-        }
-    });
-});
+    const confirmationMailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Confirmation: Message Received',
+      text: 'Thank you for your message. We have received it and will get back to you shortly.',
+    };
 
-res.status(200).json({ status: "OK" });
-};
+    // Send mail to site owner
+    await transporter.sendMail(mailOptions);
+
+    // Send confirmation mail to sender
+    await transporter.sendMail(confirmationMailOptions);
+
+    res.status(200).json({ message: 'Email sent successfully!' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
