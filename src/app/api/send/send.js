@@ -1,36 +1,26 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req, res) {
   try {
     const { email, subject, message } = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
+    // Email to site owner
+    await resend.emails.send({
+      from: process.env.EMAIL_USER,
+      to: [process.env.EMAIL_TO],
+      subject: subject,
+      html: `<p>From: ${email}</p><p>${message}</p>`,
     });
 
-    const mailOptions = {
+    // Confirmation email to sender
+    await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO,
-      subject: subject,
-      text: `From: ${email}\n\n${message}`,
-    };
-
-    const confirmationMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
+      to: [email],
       subject: 'Confirmation: Message Received',
-      text: 'Thank you for your message. We have received it and will get back to you shortly.',
-    };
-
-    // Send mail to site owner
-    await transporter.sendMail(mailOptions);
-
-    // Send confirmation mail to sender
-    await transporter.sendMail(confirmationMailOptions);
+      html: `<p>Thank you for your message. We have received it and will get back to you shortly.</p>`,
+    });
 
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
