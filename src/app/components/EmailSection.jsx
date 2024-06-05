@@ -28,13 +28,14 @@ const EmailSection = () => {
       </div>
       <div>
         {state.succeeded ? (
-          <span className="text-green-500 text-sm mt-2">
-            Email sent successfully!
+          <span className="text-green-500 text-lg mt-2">
+            Email sent successfully! <br />
+            I&apos;ll get back to you soon.
           </span>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
-              <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
+              <label htmlFor="email" className="text-white block mb-2 text-xl font-medium">
                 Your email
               </label>
               <input

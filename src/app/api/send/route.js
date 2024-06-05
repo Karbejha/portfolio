@@ -7,8 +7,6 @@ export async function POST(req) {
     const body = await req.json();
     const { email, subject, message } = body;
 
-    const myEmail = 'mohamad.karbejha@gmail.com';
-
     // Email to self
     await resend.emails.send({
       from: `${email} <${process.env.EMAIL_USER}>`,
