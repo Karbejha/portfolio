@@ -11,6 +11,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Python ( include: Django , PyQt5, Tkinter , NumPy , OpenCV ... )</li>
+        <li>C#</li>
         <li>React.js</li>
         <li>Next.js</li>
         <li>Node.js</li>        
@@ -70,7 +71,7 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript, React, Node.js, Express, MongoDB,
+            working with JavaScript , C# , React, Node.js, Express, MongoDB,
             Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
