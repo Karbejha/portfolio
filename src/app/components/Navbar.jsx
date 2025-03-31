@@ -31,6 +31,7 @@ const Navbar = () => {
           <Image
             src="/images/logo.png"
             alt="logo"
+            loading="lazy"
             className="w-24 sm:w-28 md:w-36 lg:w-40"
             width={150}
             height={150}

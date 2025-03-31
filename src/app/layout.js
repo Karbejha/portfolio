@@ -5,7 +5,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Mohamad Karbejha Portfolio',
-  description: 'Experienced web developer with a strong background in building responsive and user-friendly websites using modern technologies.',
+  description: 'Experienced web developer portfolio showcasing skills, projects, and achievements.',
+  keywords: 'web developer, portfolio, fullstack, React, Next.js, Tailwind CSS',
 }
 
 export default function RootLayout({ children }) {
