@@ -28,13 +28,13 @@ const Navbar = () => {
     <nav className="fixed mx-auto border border-0.5 border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 ">
       <div className="flex container lg:py-1 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link href={"/"}>
-        <Image
-          src="/images/logo.png"
-          alt="logo"
-          width={150}
-          height={150}
-          layout="responsive"
-        />
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            className="w-24 sm:w-28 md:w-36 lg:w-40"
+            width={150}
+            height={150}
+          />
         </Link>
 
         <div className="mobile-menu block md:hidden">
