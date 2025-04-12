@@ -10,8 +10,9 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
+        <li>C# ( include: ASP.NET Core, WebAPIs , ASP.NET MVC , Authentication: ASP.NET Identity,Entity Framework Core )</li>
         <li>Python ( include: Django , PyQt5, Tkinter , NumPy , OpenCV ... )</li>
-        <li>C#</li>
+        <li>Angular</li>
         <li>React.js</li>
         <li>Next.js</li>
         <li>Node.js</li>        

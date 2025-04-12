@@ -37,9 +37,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Full Stack Web Developer specializing in HTML, CSS, JavaScript, React, NextJS, Node.js,
-            MongoDB and Python Django, OpenCV, NumPy, Tkinter, PyQt5. Proficient in database
-            technologies SQL and IT system administration. Multilingual in English, Turkish, and Arabic
+          Full Stack Web Developer with strong expertise in C# technologies, including ASP.NET Core, Web APIs, ASP.NET MVC, ASP.NET Identity for secure authentication, and Entity Framework Core for database management. Skilled in building scalable web applications with modern frameworks and clean architecture. Additional experience in HTML, CSS, JavaScript, React, Next.js, Node.js, MongoDB, and Python technologies such as Django, OpenCV, NumPy, Tkinter, and PyQt5. Proficient in SQL databases and IT system administration. Multilingual in English, Turkish, and Arabic.
           </p>
           <div>
             <Link

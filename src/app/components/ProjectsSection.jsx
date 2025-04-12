@@ -12,65 +12,72 @@ const projectsData = [
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "https://github.com/Karbejha/portfolio",
+    previewUrl: "https://github.com/Karbejha/portfolio"
   },
   {
     id: 2,
-    title: "Movies Website",
-    description: "Wave Movies is a website that provides information about the latest movies and TV shows.",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/202309-EKTA-JO-FSW/movie-project-room-18",
-    previewUrl: "https://movie-project-room-18-q9iz.vercel.app",
+    title: "Smart Appointment",
+    description: "A Full-stack appointment booking web app built with Angular, ASP.NET Core, MySQL, and FullCalendar, featuring real-time updates, responsive design, secure authentication, and server-side rendering with Angular Universal.",
+    image: "/images/projects/2.jpg",
+    tag: ["All", "Web", "Mobile"],
+    gitUrl: "https://github.com/Karbejha/BookingSystem",
+    previewUrl: "https://github.com/Karbejha/BookingSystem"
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "AYATEKNO is a e-commerce website that provides information about the latest products.",
+    title: "Movies Website",
+    description: "Wave Movies is a website that provides information about the latest movies and TV shows.",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "https://ayatekno.com.tr/en/store/",
+    gitUrl: "https://github.com/202309-EKTA-JO-FSW/movie-project-room-18",
+    previewUrl: "https://movie-project-room-18-q9iz.vercel.app"
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "This is a food ordering application built with React.js and Next.js in Front-end , Node.js and MongoDB in Back-end.",
+    title: "E-commerce Application",
+    description: "AYATEKNO is a e-commerce website that provides information about the latest products.",
     image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/202309-EKTA-JO-FSW/capstone-room-8-1",
-    previewUrl: "/",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "https://ayatekno.com.tr/en/store/"
   },
-
   {
     id: 5,
-    title: "SaaS Application",
-    description: "Rankify is a SaaS application to SEO Marketing and Website Design Solutions for different business type.",
+    title: "Food Ordering Application",
+    description: "This is a food ordering application built with React.js and Next.js in Front-end , Node.js and MongoDB in Back-end.",
     image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/Karbejha/SaaS-website",
-    previewUrl: "https://saas-website-pi.vercel.app/",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/202309-EKTA-JO-FSW/capstone-room-8-1",
+    previewUrl: "/"
   },
   {
     id: 6,
-    title: "Movies Streaming website",
-    description: "Hotspot is  a website to watch movies and series online.",
+    title: "SaaS Application", 
+    description: "Rankify is a SaaS application to SEO Marketing and Website Design Solutions for different business type.",
     image: "/images/projects/6.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/Karbejha/HotspotFilms",
-    previewUrl: "http://dou.freecluster.eu/?i=1",
+    gitUrl: "https://github.com/Karbejha/SaaS-website",
+    previewUrl: "https://saas-website-pi.vercel.app/"
   },
   {
     id: 7,
+    title: "Movies Streaming website",
+    description: "Hotspot is  a website to watch movies and series online.",
+    image: "/images/projects/7.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Karbejha/HotspotFilms",
+    previewUrl: "http://dou.freecluster.eu/?i=1"
+  },
+  {
+    id: 8,
     title: "YouTube Video Downloader",
     description: "Desktop application to download YouTube videos, built with Tkinter and Python.",
-    image: "/images/projects/7.png",
+    image: "/images/projects/8.png",
     tag: ["All", "Desktop"],
     gitUrl: "/",
-    previewUrl: "/",
-  },
+    previewUrl: "/"
+  }
 ];
-
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
