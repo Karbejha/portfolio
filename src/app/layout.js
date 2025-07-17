@@ -91,7 +91,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'google-site-verification-placeholder',
+    google: 'googled96d8fe7bd564ca7',
     yandex: 'yandex-verification-placeholder',
     yahoo: 'yahoo-verification-placeholder',
   },
