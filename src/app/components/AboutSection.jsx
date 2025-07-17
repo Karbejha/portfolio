@@ -64,18 +64,26 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
+    <section className="text-white" id="about" aria-labelledby="about-heading">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} alt="About" />
+        <Image 
+          src="/images/about-image.png" 
+          width={500} 
+          height={500} 
+          alt="Mohamad Karbejha - About me image showing professional workspace" 
+          className="rounded-lg"
+          loading="lazy"
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
+          <h2 id="about-heading" className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <p className="text-base lg:text-lg mb-6">
+            I am a <strong>Full Stack Web Developer</strong> with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript , C# , React, Node.js, Express, MongoDB,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            working with <strong>C#, ASP.NET Core, React, Next.js, Python, Django,
+            JavaScript, Angular, Node.js, Express, MongoDB, MySQL</strong> and <strong>Git</strong>.
+            I am a quick learner and I am always looking to expand my knowledge
+            and skill set. I am a team player and I am excited to work with
+            others to create amazing applications.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -100,11 +108,59 @@ const AboutSection = () => {
               Certifications{" "}
             </TabButton>
           </div>
-          <div className="mt-8">
+          <div className="mt-8" aria-live="polite">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
       </div>
+      
+      {/* Structured Data for About Section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Mohamad Karbejha",
+            "jobTitle": "Full Stack Developer",
+            "description": "Full Stack Web Developer with expertise in C#, ASP.NET Core, React, Next.js, Python, and modern web technologies",
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Full Stack Developer",
+              "description": "Develops both frontend and backend components of web applications",
+              "skills": [
+                "C# Programming",
+                "ASP.NET Core",
+                "React.js",
+                "Next.js",
+                "Python",
+                "Django",
+                "JavaScript",
+                "Angular",
+                "Node.js",
+                "MongoDB",
+                "MySQL",
+                "Entity Framework Core",
+                "Web APIs",
+                "ASP.NET MVC",
+                "ASP.NET Identity"
+              ]
+            },
+            "knowsAbout": [
+              "Full Stack Development",
+              "Web Development",
+              "Software Engineering",
+              "Database Management",
+              "API Development",
+              "Frontend Development",
+              "Backend Development",
+              "Responsive Design",
+              "Authentication Systems",
+              "Cloud Computing"
+            ]
+          })
+        }}
+      />
     </section>
   );
 };
