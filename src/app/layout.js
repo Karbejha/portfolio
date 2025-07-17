@@ -95,6 +95,9 @@ export const metadata = {
     google: 'googled96d8fe7bd564ca7',
     yandex: 'yandex-verification-placeholder',
     yahoo: 'yahoo-verification-placeholder',
+    other: {
+      'msvalidate.01': 'DE98BD5140ED95B0034263DE0DE408D0',
+    },
   },
   category: 'technology',
 }
