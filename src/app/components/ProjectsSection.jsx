@@ -7,17 +7,17 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "This is my personal portfolio website built with React.js and Next.js.",
+    title: "FlowHR",
+    description: "Streamline HR operations with our comprehensive management system, Provided by many reports and features for mangers and employees as well, including attendance tracking, leave management, and performance evaluation.",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "https://github.com/Karbejha/portfolio"
+    gitUrl: "https://github.com/Karbejha/FlowHR",
+    previewUrl: "https://flow-hr-seven.vercel.app/"
   },
   {
     id: 2,
     title: "Smart Appointment",
-    description: "A Full-stack appointment booking web app built with Angular, ASP.NET Core, MySQL, and FullCalendar, featuring real-time updates, responsive design, secure authentication, and server-side rendering with Angular Universal.",
+    description: "A Full-stack appointment booking web app built with Angular, ASP.NET Core, MySQL,responsive design, secure authentication, and server-side rendering with Angular Universal.",
     image: "/images/projects/2.jpg",
     tag: ["All", "Web", "Mobile"],
     gitUrl: "https://github.com/Karbejha/BookingSystem",
@@ -25,12 +25,12 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Movies Website",
-    description: "Wave Movies is a website that provides information about the latest movies and TV shows.",
+    title: "Misaş - Sanal Market",
+    description: "Misaş is a virtual market website and Mobile application that provides a wide range of products and services.",
     image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/202309-EKTA-JO-FSW/movie-project-room-18",
-    previewUrl: "https://movie-project-room-18-q9iz.vercel.app"
+    tag: ["All", "Web", "Mobile"],
+    gitUrl: "/",
+    previewUrl: "https://misas.com.tr/"
   },
   {
     id: 4,
@@ -76,6 +76,24 @@ const projectsData = [
     tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/"
+  },
+    {
+    id: 9,
+    title: "React Portfolio Website",
+    description: "This is my personal portfolio website built with React.js and Next.js.",
+    image: "/images/projects/9.png",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "https://github.com/Karbejha/portfolio"
+  },
+   {
+    id: 10,
+    title: "Movies Website",
+    description: "Wave Movies is a website that provides information about the latest movies and TV shows.",
+    image: "/images/projects/10.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/202309-EKTA-JO-FSW/movie-project-room-18",
+    previewUrl: "https://movie-project-room-18-q9iz.vercel.app"
   }
 ];
 const ProjectsSection = () => {

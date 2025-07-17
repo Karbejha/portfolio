@@ -1,0 +1,30 @@
+{
+  "name": "Mohamad Karbejha - Full Stack Developer Portfolio",
+  "short_name": "Mohamad Karbejha",
+  "description": "Experienced Full Stack Developer specializing in C# ASP.NET Core, React, Next.js, Python, and modern web technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "/images/icon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
