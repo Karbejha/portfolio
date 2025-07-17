@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -112,6 +113,7 @@ export default function RootLayout({ children }) {
         <meta name="geo.placename" content="Istanbul" />
         <meta name="geo.position" content="41.0082;28.9784" />
         <meta name="ICBM" content="41.0082, 28.9784" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -164,7 +166,23 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P66D4W75M2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P66D4W75M2');
+          `}
+        </Script>
+        
+        {children}
+      </body>
     </html>
   )
 }
