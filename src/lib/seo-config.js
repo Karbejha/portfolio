@@ -58,7 +58,7 @@ export const siteConfig = {
   ],
   author: {
     name: 'Mohamad Karbejha',
-    email: 'mohamad.karbejha@example.com',
+    email: 'info@karbejha.site',
     url: 'https://karbejha.site',
     image: 'https://karbejha.site/images/hero-image.png'
   },

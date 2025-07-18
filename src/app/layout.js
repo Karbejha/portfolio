@@ -107,10 +107,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="canonical" href="https://karbejha.site" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/images/icon.ico" type="image/x-icon" />
+        
+        {/* Favicons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* SEO Meta Tags */}
         <meta name="theme-color" content="#121212" />
+        <meta name="msapplication-TileColor" content="#121212" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="geo.region" content="TR-34" />
         <meta name="geo.placename" content="Istanbul" />
