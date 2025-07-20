@@ -42,10 +42,12 @@ const TAB_DATA = [
       <ul className="list-disc pl-2">
         <li>Re:Coded</li>
         <Link href={"https://www.credential.net/26f7bbd2-4097-4981-a029-87786aeec745"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Fullstack Web Development Bootcamp</Link><br></br>
-        <li>Coursera:</li>
+        <li>Coursera(Programming):</li>
         <Link href={"https://www.coursera.org/account/accomplishments/certificate/LJXC9KQGFJS5"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Meta - Fullstack Web Developer (Django framework)</Link><br></br>
+        <Link href={"https://www.coursera.org/account/accomplishments/certificate/PHRF7ISJZTS3"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• TypeScript</Link><br></br>
         <Link href={"https://www.coursera.org/account/accomplishments/certificate/A78T3X9FCYBX"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Web Application Technologies and Django</Link><br></br>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/6CX8MU7WZJLS"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google Cloud Fundamentals: Core Infrastructure</Link><br></br>
+        <Link href={"https://www.coursera.org/account/accomplishments/certificate/6CX8MU7WZJLS"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google Cloud Fundamentals: Core Infrastructure</Link><br></br>
+        <li>Coursera(IT):</li>
         <Link href={"https://www.coursera.org/account/accomplishments/certificate/C5YJ8WZ78HZL"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google - The Bits and Bytes of Computer Networking</Link><br></br>
         <Link href={"https://www.coursera.org/account/accomplishments/certificate/S2KD7PSVQEW5"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google - Technical Support Fundamentals</Link><br></br>
       </ul>
