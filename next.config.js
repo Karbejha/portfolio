@@ -41,28 +41,15 @@ const nextConfig = {
     ];
   },
 
-  // Redirects to consolidate duplicates and enforce canonical host
+  // Redirects to consolidate duplicates
   async redirects() {
     return [
-      // Force non-www as canonical
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.karbejha.site',
-          },
-        ],
-        destination: 'https://karbejha.site/:path*',
-        permanent: true,
-      },
-
-      // Section aliases -> single-page anchors (for users). Google ignores fragments and treats as '/'
-      { source: '/portfolio', destination: '/#projects', permanent: true },
-      { source: '/about', destination: '/#about', permanent: true },
-      { source: '/contact', destination: '/#contact', permanent: true },
-      { source: '/skills', destination: '/#about', permanent: true },
-      { source: '/achievements', destination: '/#achievements', permanent: true },
+      // Section aliases -> redirect to root (hash fragments are client-side only)
+      { source: '/portfolio', destination: '/', permanent: true },
+      { source: '/about', destination: '/', permanent: true },
+      { source: '/contact', destination: '/', permanent: true },
+      { source: '/skills', destination: '/', permanent: true },
+      { source: '/achievements', destination: '/', permanent: true },
     ];
   },
 

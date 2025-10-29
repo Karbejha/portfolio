@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
 
@@ -15,14 +14,14 @@ Crawl-delay: 1
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
-Crawl-delay: 1
+ Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
-Crawl-delay: 1
+ Crawl-delay: 1
 
 User-agent: YandexBot
 Allow: /
 Disallow: /api/
-Crawl-delay: 2
+ Crawl-delay: 2
