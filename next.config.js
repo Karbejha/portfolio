@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for better SEO
+  // Use trailingSlash consistently across the site
   trailingSlash: true,
   
   // Image optimization
@@ -41,29 +41,28 @@ const nextConfig = {
     ];
   },
 
-  // Rewrites for better SEO URLs
-  async rewrites() {
+  // Redirects to consolidate duplicates and enforce canonical host
+  async redirects() {
     return [
+      // Force non-www as canonical
       {
-        source: '/portfolio',
-        destination: '/#projects',
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.karbejha.site',
+          },
+        ],
+        destination: 'https://karbejha.site/:path*',
+        permanent: true,
       },
-      {
-        source: '/about',
-        destination: '/#about',
-      },
-      {
-        source: '/contact',
-        destination: '/#contact',
-      },
-      {
-        source: '/skills',
-        destination: '/#about',
-      },
-      {
-        source: '/achievements',
-        destination: '/#achievements',
-      },
+
+      // Section aliases -> single-page anchors (for users). Google ignores fragments and treats as '/'
+      { source: '/portfolio', destination: '/#projects', permanent: true },
+      { source: '/about', destination: '/#about', permanent: true },
+      { source: '/contact', destination: '/#contact', permanent: true },
+      { source: '/skills', destination: '/#about', permanent: true },
+      { source: '/achievements', destination: '/#achievements', permanent: true },
     ];
   },
 

@@ -50,11 +50,6 @@ export const metadata = {
   metadataBase: new URL('https://karbejha.site'),
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-      'tr-TR': '/tr-TR',
-      'ar-SA': '/ar-SA',
-    },
   },
   openGraph: {
     type: 'website',
@@ -106,12 +101,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://karbejha.site" />
-        
-        {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        {/** Canonical URL is emitted by Next.js from metadata.alternates + metadataBase */}
+
+        {/* Favicons (use app/icon.ico which is present and served) */}
+        <link rel="icon" href="/icon.ico" sizes="any" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="manifest" href="/site.webmanifest" />
         

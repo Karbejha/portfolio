@@ -14,8 +14,8 @@ const Footer = () => {
                 alt="logo"
                 width={150}
                 height={50}
-                objectFit="contain"
-                className="w-auto h-auto"
+                className="w-auto h-auto object-contain"
+                style={{ objectFit: 'contain' }}
               />
             </Link>
           </div>

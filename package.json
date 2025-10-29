@@ -36,5 +36,11 @@
   },
   "devDependencies": {
     "@types/react": "19.1.8"
+  },
+  "overrides": {
+    "axios": ">=1.12.0",
+    "postmark": {
+      "axios": ">=1.12.0"
+    }
   }
 }
