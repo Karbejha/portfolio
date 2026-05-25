@@ -1,8 +1,21 @@
 import "./globals.css";
 import Script from "next/script";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { metadata, serializeJsonLd, structuredData } from "../lib/seo-config";
 
 const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export { metadata };
 
@@ -15,7 +28,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <head>
         <link rel="icon" href="/icon.ico" sizes="any" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />

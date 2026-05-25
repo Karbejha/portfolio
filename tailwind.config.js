@@ -18,6 +18,10 @@ module.exports = {
         primary: colors.purple,
         secondary: colors.pink,
       },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
+      },
     },
   },
   plugins: [],
