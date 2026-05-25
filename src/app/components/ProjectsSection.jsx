@@ -1,112 +1,119 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
     id: 1,
     title: "FlowHR",
-    description: "Streamline HR operations with our comprehensive management system, Provided by many reports and features for mangers and employees as well, including attendance tracking, leave management, and performance evaluation.",
+    description:
+      "A full-stack HR management system with attendance tracking, leave management, performance evaluation, and reporting for managers and employees.",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
+    techStack: ["Next.js", "Express.js", "MongoDB", "TypeScript"],
     gitUrl: "https://github.com/Karbejha/FlowHR",
-    previewUrl: "https://flow-hr-seven.vercel.app/"
+    previewUrl: "https://flow-hr-seven.vercel.app/",
   },
   {
     id: 2,
     title: "Smart Appointment",
-    description: "A Full-stack appointment booking web app built with Angular, ASP.NET Core, MySQL,responsive design, secure authentication, and server-side rendering with Angular Universal.",
+    description:
+      "A full-stack appointment booking app built with Angular, ASP.NET Core, MySQL, responsive design, secure authentication, and server-side rendering.",
     image: "/images/projects/2.jpg",
     tag: ["All", "Web", "Mobile"],
+    techStack: ["Angular", "ASP.NET Core", "MySQL"],
     gitUrl: "https://github.com/Karbejha/BookingSystem",
-    previewUrl: "https://github.com/Karbejha/BookingSystem"
+    previewUrl: null,
   },
   {
     id: 3,
-    title: "Misaş - Sanal Market",
-    description: "Misaş is a virtual market website and Mobile application that provides a wide range of products and services.",
+    title: "Misas - Sanal Market",
+    description:
+      "A virtual market website and mobile application for browsing and purchasing products online.",
     image: "/images/projects/3.png",
     tag: ["All", "Web", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "https://misas.com.tr/"
+    techStack: ["Web", "Mobile"],
+    gitUrl: null,
+    previewUrl: "https://misas.com.tr/",
   },
   {
     id: 4,
     title: "E-commerce Application",
-    description: "AYATEKNO is a e-commerce website that provides information about the latest products.",
+    description:
+      "An e-commerce website for browsing store products and product information.",
     image: "/images/projects/4.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "https://ayatekno.com.tr/en/store/"
+    techStack: ["E-commerce", "Web"],
+    gitUrl: null,
+    previewUrl: "https://ayatekno.com.tr/en/store/",
   },
   {
     id: 5,
     title: "Food Ordering Application",
-    description: "This is a food ordering application built with React.js and Next.js in Front-end , Node.js and MongoDB in Back-end.",
+    description:
+      "A food ordering application built with React, Next.js, Node.js, and MongoDB.",
     image: "/images/projects/5.png",
     tag: ["All", "Mobile"],
+    techStack: ["Next.js", "Node.js", "MongoDB"],
     gitUrl: "https://github.com/202309-EKTA-JO-FSW/capstone-room-8-1",
-    previewUrl: "/"
+    previewUrl: null,
   },
   {
     id: 6,
-    title: "SaaS Application", 
-    description: "Rankify is a SaaS application to SEO Marketing and Website Design Solutions for different business type.",
+    title: "SaaS Application",
+    description:
+      "Rankify is a SaaS website for SEO marketing and website design solutions across business types.",
     image: "/images/projects/6.png",
     tag: ["All", "Web"],
+    techStack: ["Next.js", "TypeScript", "Node.js"],
     gitUrl: "https://github.com/Karbejha/SaaS-website",
-    previewUrl: "https://saas-website-pi.vercel.app/"
+    previewUrl: "https://saas-website-pi.vercel.app/",
   },
   {
     id: 7,
-    title: "Movies Streaming website",
-    description: "Hotspot is  a website to watch movies and series online.",
+    title: "Movies Streaming Website",
+    description: "Hotspot is a website for browsing movies and series online.",
     image: "/images/projects/7.png",
     tag: ["All", "Web"],
+    techStack: ["React", "JavaScript", "REST API"],
     gitUrl: "https://github.com/Karbejha/HotspotFilms",
-    previewUrl: "http://dou.freecluster.eu/?i=1"
+    previewUrl: null,
   },
   {
     id: 8,
     title: "YouTube Video Downloader",
-    description: "Desktop application to download YouTube videos, built with Tkinter and Python.",
+    description:
+      "A desktop application for downloading YouTube videos, built with Tkinter and Python.",
     image: "/images/projects/8.png",
     tag: ["All", "Desktop"],
-    gitUrl: "/",
-    previewUrl: "/"
+    techStack: ["Python", "Tkinter"],
+    gitUrl: null,
+    previewUrl: null,
   },
-    {
-    id: 9,
-    title: "React Portfolio Website",
-    description: "This is my personal portfolio website built with React.js and Next.js.",
-    image: "/images/projects/9.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "https://github.com/Karbejha/portfolio"
-  },
-   {
+  {
     id: 10,
     title: "Movies Website",
-    description: "Wave Movies is a website that provides information about the latest movies and TV shows.",
+    description:
+      "Wave Movies is a website that provides information about the latest movies and TV shows.",
     image: "/images/projects/10.png",
     tag: ["All", "Web"],
+    techStack: ["React", "JavaScript", "REST API"],
     gitUrl: "https://github.com/202309-EKTA-JO-FSW/movie-project-room-18",
-    previewUrl: "https://movie-project-room-18-q9iz.vercel.app"
-  }
+    previewUrl: "https://movie-project-room-18-q9iz.vercel.app",
+  },
 ];
+
+const projectTags = ["All", "Web", "Mobile", "Desktop"];
+
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
   const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
+    project.tag.includes(tag),
   );
 
   const cardVariants = {
@@ -115,31 +122,25 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="px-4 sm:px-6 md:px-8">
-      <h2 className="text-center text-3xl sm:text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+    <section id="projects" className="px-4 sm:px-6 md:px-8" aria-labelledby="projects-heading">
+      <h2
+        id="projects-heading"
+        className="text-center text-3xl sm:text-4xl font-bold text-white mt-4 mb-8 md:mb-12"
+      >
         My Projects
       </h2>
-      <div className="text-white flex flex-row flex-wrap justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Desktop"
-          isSelected={tag === "Desktop"}
-        />
+      <div
+        className="text-white flex flex-row flex-wrap justify-center items-center gap-2 py-6"
+        aria-label="Filter projects by type"
+      >
+        {projectTags.map((projectTag) => (
+          <ProjectTag
+            key={projectTag}
+            onClick={setTag}
+            name={projectTag}
+            isSelected={tag === projectTag}
+          />
+        ))}
       </div>
       <ul
         ref={ref}
@@ -147,17 +148,17 @@ const ProjectsSection = () => {
       >
         {filteredProjects.map((project, index) => (
           <motion.li
-            key={index}
+            key={project.id}
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+            transition={{ duration: 0.3, delay: index * 0.2 }}
           >
             <ProjectCard
-              key={project.id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
+              techStack={project.techStack}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
             />

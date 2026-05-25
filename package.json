@@ -12,9 +12,6 @@
     "@formspree/react": "^2.5.1",
     "@heroicons/react": "^2.0.18",
     "@next/bundle-analyzer": "^15.4.1",
-    "@react-email/components": "^0.0.17",
-    "@react-email/render": "^0.0.13",
-    "@react-email/tailwind": "^0.0.16",
     "@vercel/analytics": "^1.5.0",
     "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
@@ -22,14 +19,11 @@
     "framer-motion": "^10.16.1",
     "next": "^14.2.2",
     "next-seo": "^6.8.0",
-    "nodemailer": "^6.9.13",
     "postcss": "^8.4.38",
-    "postmark": "^4.0.2",
     "react": "18.2.0",
     "react-animated-numbers": "^0.16.0",
     "react-dom": "18.2.0",
     "react-type-animation": "^3.1.0",
-    "resend": "^3.2.0",
     "sharp": "^0.33.3",
     "tailwindcss": "3.3.3",
     "vercel": "^32.3.0"
@@ -39,9 +33,6 @@
   },
   "overrides": {
     "axios": ">=1.12.0",
-    "postmark": {
-      "axios": ">=1.12.0"
-    },
     "tar": ">=7.5.3"
   }
 }

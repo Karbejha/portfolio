@@ -1,37 +1,91 @@
 "use client";
-import React, { useTransition, useState } from "react";
+import React, { useState, useTransition } from "react";
 import Image from "next/image";
-import TabButton from "./TabButton";
 import Link from "next/link";
+import TabButton from "./TabButton";
+
+const certificateGroups = [
+  {
+    provider: "Re:Coded",
+    certificates: [
+      {
+        title: "Fullstack Web Development Bootcamp",
+        href: "https://www.credential.net/26f7bbd2-4097-4981-a029-87786aeec745",
+      },
+    ],
+  },
+  {
+    provider: "Coursera (Programming)",
+    certificates: [
+      {
+        title: "Meta - Fullstack Web Developer (Django framework)",
+        href: "https://www.coursera.org/account/accomplishments/certificate/LJXC9KQGFJS5",
+      },
+      {
+        title: "TypeScript",
+        href: "https://www.coursera.org/account/accomplishments/certificate/PHRF7ISJZTS3",
+      },
+      {
+        title: "Web Application Technologies and Django",
+        href: "https://www.coursera.org/account/accomplishments/certificate/A78T3X9FCYBX",
+      },
+      {
+        title: "Google Cloud Fundamentals: Core Infrastructure",
+        href: "https://www.coursera.org/account/accomplishments/certificate/6CX8MU7WZJLS",
+      },
+    ],
+  },
+  {
+    provider: "Coursera (IT)",
+    certificates: [
+      {
+        title: "Google - The Bits and Bytes of Computer Networking",
+        href: "https://www.coursera.org/account/accomplishments/certificate/C5YJ8WZ78HZL",
+      },
+      {
+        title: "Google - Technical Support Fundamentals",
+        href: "https://www.coursera.org/account/accomplishments/certificate/S2KD7PSVQEW5",
+      },
+    ],
+  },
+];
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>C# ( include: ASP.NET Core, WebAPIs , ASP.NET MVC , Authentication: ASP.NET Identity,Entity Framework Core )</li>
-        <li>Python ( include: Django , PyQt5, Tkinter , NumPy , OpenCV ... )</li>
-        <li>Angular</li>
-        <li>React.js</li>
-        <li>Next.js</li>
-        <li>Node.js</li>        
-        <li>JavaScript</li>
-        <li>Express.js</li>
-        <li>MongoDB</li>
-        <li>MySQL-SQL</li>
+      <ul className="space-y-2 pl-2">
+        <li>
+          <strong>Frontend:</strong> Next.js, React, TypeScript, JavaScript,
+          HTML/CSS
+        </li>
+        <li>
+          <strong>Backend:</strong> Node.js, Express.js, Python, Django
+        </li>
+        <li>
+          <strong>Database:</strong> PostgreSQL, MongoDB, MySQL
+        </li>
+        <li>
+          <strong>DevOps:</strong> Docker, CI/CD, Git
+        </li>
+        <li>
+          <strong>Other:</strong> REST APIs, WebSocket, Socket.IO
+        </li>
       </ul>
     ),
-    
   },
   {
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Computer Engineering-DOĞUŞ ÜNİVERSİTY- Istanbul/Turkey</li>
-        <li>Robot Engineering (Double Major)-DOĞUŞ ÜNİVERSİTY- Istanbul/Turkey</li>
-        <li>Fullstack Web Development-Re:Coded</li>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>Computer Engineering - Dogus University - Istanbul, Turkey</li>
+        <li>
+          Robot Engineering (Double Major) - Dogus University - Istanbul,
+          Turkey
+        </li>
+        <li>Fullstack Web Development - Re:Coded</li>
       </ul>
     ),
   },
@@ -39,25 +93,35 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li className="text-pink-500">Re:Coded</li>
-        <Link href={"https://www.credential.net/26f7bbd2-4097-4981-a029-87786aeec745"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Fullstack Web Development Bootcamp</Link><br></br>
-        <li className="text-pink-500">Coursera(Programming):</li>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/LJXC9KQGFJS5"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Meta - Fullstack Web Developer (Django framework)</Link><br></br>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/PHRF7ISJZTS3"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• TypeScript</Link><br></br>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/A78T3X9FCYBX"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Web Application Technologies and Django</Link><br></br>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/6CX8MU7WZJLS"} style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google Cloud Fundamentals: Core Infrastructure</Link><br></br>
-        <li className="text-pink-500">Coursera(IT):</li>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/C5YJ8WZ78HZL"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google - The Bits and Bytes of Computer Networking</Link><br></br>
-        <Link href={"https://www.coursera.org/account/accomplishments/certificate/S2KD7PSVQEW5"}style={{ textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer">• Google - Technical Support Fundamentals</Link><br></br>
-      </ul>
+      <div className="space-y-4">
+        {certificateGroups.map((group) => (
+          <div key={group.provider}>
+            <h3 className="text-pink-500">{group.provider}</h3>
+            <ul className="list-disc space-y-1 pl-5">
+              {group.certificates.map((certificate) => (
+                <li key={certificate.href}>
+                  <Link
+                    href={certificate.href}
+                    className="underline underline-offset-4 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {certificate.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     ),
   },
 ];
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
+  const selectedTab = TAB_DATA.find((item) => item.id === tab) ?? TAB_DATA[0];
 
   const handleTabChange = (id) => {
     startTransition(() => {
@@ -68,101 +132,60 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about" aria-labelledby="about-heading">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image 
-          src="/images/about-image.png" 
-          width={500} 
-          height={500} 
-          alt="Mohamad Karbejha - About me image showing professional workspace" 
+        <Image
+          src="/images/about-image.png"
+          width={500}
+          height={500}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          alt="Mohamad Karbejha professional workspace"
           className="rounded-lg"
           loading="lazy"
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 id="about-heading" className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <h2 id="about-heading" className="text-4xl font-bold text-white mb-4">
+            About Me
+          </h2>
           <p className="text-base lg:text-lg mb-6">
-            I am a <strong>Full Stack Web Developer</strong> with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with <strong>C#, ASP.NET Core, React, Next.js, Python, Django,
-            JavaScript, Angular, Node.js, Express, MongoDB, MySQL</strong> and <strong>Git</strong>.
-            I am a quick learner and I am always looking to expand my knowledge
-            and skill set. I am a team player and I am excited to work with
-            others to create amazing applications.
+            I&apos;m a Full Stack Developer with 6+ years of professional
+            experience, currently working remotely at Techtile (Germany). I
+            specialize in building production-grade web applications using
+            Next.js, TypeScript, Node.js, Express.js, and PostgreSQL.
+            <br />
+            <br />I hold two B.Sc. degrees from Dogus University: Computer
+            Engineering and Robot Engineering. I&apos;ve worked across industries
+            including HR, maritime systems, e-commerce, and SaaS platforms.
+            <br />
+            <br />
+            I&apos;m multilingual (Arabic, English, Turkish) and open to new
+            remote opportunities and relocation.
           </p>
-          <div className="flex flex-row justify-start mt-8">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
-            </TabButton>
+          <div
+            className="flex flex-row justify-start mt-8"
+            role="tablist"
+            aria-label="About section details"
+          >
+            {TAB_DATA.map((item) => (
+              <TabButton
+                key={item.id}
+                id={`${item.id}-tab`}
+                controls={`${item.id}-panel`}
+                selectTab={() => handleTabChange(item.id)}
+                active={tab === item.id}
+              >
+                {item.title}
+              </TabButton>
+            ))}
           </div>
-          <div className="mt-8" aria-live="polite">
-            {TAB_DATA.find((t) => t.id === tab).content}
+          <div
+            id={`${selectedTab.id}-panel`}
+            className="mt-8"
+            role="tabpanel"
+            aria-labelledby={`${selectedTab.id}-tab`}
+          >
+            {selectedTab.content}
           </div>
         </div>
       </div>
-      
-      {/* Structured Data for About Section */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Mohamad Karbejha",
-            "jobTitle": "Full Stack Developer",
-            "description": "Full Stack Web Developer with expertise in C#, ASP.NET Core, React, Next.js, Python, and modern web technologies",
-            "hasOccupation": {
-              "@type": "Occupation",
-              "name": "Full Stack Developer",
-              "description": "Develops both frontend and backend components of web applications",
-              "skills": [
-                "C# Programming",
-                "ASP.NET Core",
-                "React.js",
-                "Next.js",
-                "Python",
-                "Django",
-                "JavaScript",
-                "Angular",
-                "Node.js",
-                "MongoDB",
-                "MySQL",
-                "Entity Framework Core",
-                "Web APIs",
-                "ASP.NET MVC",
-                "ASP.NET Identity"
-              ]
-            },
-            "knowsAbout": [
-              "Full Stack Development",
-              "Web Development",
-              "Software Engineering",
-              "Database Management",
-              "API Development",
-              "Frontend Development",
-              "Backend Development",
-              "Responsive Design",
-              "Authentication Systems",
-              "Cloud Computing"
-            ]
-          })
-        }}
-      />
     </section>
   );
 };
