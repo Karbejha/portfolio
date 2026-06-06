@@ -1,0 +1,101 @@
+import "../globals.css";
+import Script from "next/script";
+import localFont from "next/font/local";
+import { JetBrains_Mono } from "next/font/google";
+import {
+  getLocalizedMetadata,
+  getStructuredData,
+  serializeJsonLd,
+} from "../../lib/seo-config";
+
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
+const qomraArabic = localFont({
+  src: [
+    {
+      path: "../fonts/qomra/itfQomraArabic-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/qomra/itfQomraArabic-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/qomra/itfQomraArabic-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/qomra/itfQomraArabic-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/qomra/itfQomraArabic-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-qomra-arabic",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata = getLocalizedMetadata("ar");
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#121212",
+};
+
+export default function ArabicRootLayout({ children }) {
+  return (
+    <html lang="ar" dir="rtl" className={`${qomraArabic.variable} ${mono.variable}`}>
+      <head>
+        <link rel="icon" href="/icon.ico" sizes="any" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#121212" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="geo.region" content="TR-34" />
+        <meta name="geo.placename" content="Istanbul" />
+        <meta name="geo.position" content="41.0082;28.9784" />
+        <meta name="ICBM" content="41.0082, 28.9784" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(getStructuredData("ar")),
+          }}
+        />
+      </head>
+      <body className={qomraArabic.className}>
+        {googleAnalyticsId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics-ar" strategy="afterInteractive">
+              {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+            </Script>
+          </>
+        ) : null}
+        {children}
+      </body>
+    </html>
+  );
+}

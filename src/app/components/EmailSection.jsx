@@ -7,7 +7,7 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import { siteConfig } from "../../lib/seo-config";
 
-const EmailSection = () => {
+const EmailSection = ({ content }) => {
   const [state, handleSubmit] = useForm("xayrgoae");
 
   return (
@@ -22,18 +22,17 @@ const EmailSection = () => {
       />
       <div className="z-10">
         <h2 id="contact-heading" className="text-xl font-bold text-white my-2">
-          Let&apos;s Work Together
+          {content.heading}
         </h2>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m currently open to full-time remote roles and freelance
-          projects. Feel free to reach out - I respond within 24 hours.
+          {content.description}
         </p>
         <div className="socials flex flex-row gap-2">
           <Link
             href={siteConfig.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit Mohamad Karbejha on GitHub"
+            aria-label={content.githubLabel}
           >
             <Image src={GithubIcon} alt="" aria-hidden="true" />
           </Link>
@@ -41,7 +40,7 @@ const EmailSection = () => {
             href={siteConfig.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit Mohamad Karbejha on LinkedIn"
+            aria-label={content.linkedinLabel}
           >
             <Image src={LinkedinIcon} alt="" aria-hidden="true" />
           </Link>
@@ -50,15 +49,15 @@ const EmailSection = () => {
       <div>
         {state.succeeded ? (
           <p className="text-green-500 text-lg mt-2" role="status">
-            Email sent successfully!
+            {content.success}
             <br />
-            I&apos;ll get back to you soon.
+            {content.successFollowUp}
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label htmlFor="email" className="text-white block mb-2 text-xl font-medium">
-                Your email
+                {content.emailLabel}
               </label>
               <input
                 name="email"
@@ -67,17 +66,17 @@ const EmailSection = () => {
                 required
                 autoComplete="email"
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Enter your email"
+                placeholder={content.emailPlaceholder}
               />
               <ValidationError
-                prefix="Email"
+                prefix={content.emailErrorPrefix}
                 field="email"
                 errors={state.errors}
               />
             </div>
             <div className="mb-6">
               <label htmlFor="subject" className="text-white block text-sm mb-2 font-medium">
-                Subject
+                {content.subjectLabel}
               </label>
               <input
                 name="subject"
@@ -87,12 +86,12 @@ const EmailSection = () => {
                 minLength={3}
                 autoComplete="off"
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Enter the subject"
+                placeholder={content.subjectPlaceholder}
               />
             </div>
             <div className="mb-6">
               <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
-                Message
+                {content.messageLabel}
               </label>
               <textarea
                 name="message"
@@ -101,10 +100,10 @@ const EmailSection = () => {
                 minLength={10}
                 rows={5}
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
+                placeholder={content.messagePlaceholder}
               />
               <ValidationError
-                prefix="Message"
+                prefix={content.messageErrorPrefix}
                 field="message"
                 errors={state.errors}
               />
@@ -114,7 +113,7 @@ const EmailSection = () => {
               disabled={state.submitting}
               className="bg-primary-500 hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-70 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              {state.submitting ? "Sending..." : "Send Message"}
+              {state.submitting ? content.sending : content.send}
             </button>
           </form>
         )}

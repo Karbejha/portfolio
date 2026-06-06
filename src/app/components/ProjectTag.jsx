@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProjectTag = ({ name, onClick, isSelected }) => {
+const ProjectTag = ({ name, label, onClick, isSelected }) => {
   const buttonStyles = isSelected
     ? "text-white border-primary-500"
     : "text-[#ADB7BE] border-slate-600 hover:border-white";
@@ -12,7 +12,7 @@ const ProjectTag = ({ name, onClick, isSelected }) => {
       onClick={() => onClick(name)}
       aria-pressed={isSelected}
     >
-      {name}
+      {label}
     </button>
   );
 };

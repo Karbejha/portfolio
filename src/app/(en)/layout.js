@@ -1,7 +1,11 @@
-import "./globals.css";
+import "../globals.css";
 import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { metadata, serializeJsonLd, structuredData } from "../lib/seo-config";
+import {
+  getLocalizedMetadata,
+  getStructuredData,
+  serializeJsonLd,
+} from "../../lib/seo-config";
 
 const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
@@ -17,7 +21,7 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-export { metadata };
+export const metadata = getLocalizedMetadata("en");
 
 export const viewport = {
   width: "device-width",
@@ -42,11 +46,11 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: serializeJsonLd(structuredData),
+            __html: serializeJsonLd(getStructuredData("en")),
           }}
         />
       </head>
-      <body className="font-sans">
+      <body className={inter.className}>
         {googleAnalyticsId ? (
           <>
             <Script

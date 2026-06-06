@@ -18,7 +18,7 @@ const TabButton = ({ active, selectTab, children, controls, id }) => {
       aria-controls={controls}
       onClick={selectTab}
     >
-      <span className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+      <span className={`me-3 font-semibold hover:text-white ${buttonClasses}`}>
         {children}
       </span>
       <motion.div
@@ -26,7 +26,7 @@ const TabButton = ({ active, selectTab, children, controls, id }) => {
         initial={{ width: 0 }}
         animate={{ width: active ? "calc(100% - 0.75rem)" : 0 }}
         variants={variants}
-        className="h-1 bg-primary-500 mt-2 mr-3"
+        className="h-1 bg-primary-500 mt-2 me-3"
       />
     </button>
   );
