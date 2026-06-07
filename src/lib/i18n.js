@@ -1,10 +1,11 @@
 export const defaultLocale = "en";
 
-export const locales = ["en", "ar"];
+export const locales = ["en", "ar", "tr"];
 
 export const localePaths = {
   en: "/",
   ar: "/ar/",
+  tr: "/tr/",
 };
 
 export const localeSettings = {
@@ -23,6 +24,14 @@ export const localeSettings = {
     direction: "rtl",
     htmlLang: "ar",
     ogLocale: "ar",
+  },
+  tr: {
+    label: "Türkçe",
+    shortLabel: "TR",
+    alternateLabel: "English",
+    direction: "ltr",
+    htmlLang: "tr",
+    ogLocale: "tr_TR",
   },
 };
 
@@ -73,10 +82,10 @@ const certificateGroups = [
 ];
 
 const projectFilters = [
-  { id: "All", labels: { en: "All", ar: "الكل" } },
-  { id: "Web", labels: { en: "Web", ar: "ويب" } },
-  { id: "Mobile", labels: { en: "Mobile", ar: "جوال" } },
-  { id: "Desktop", labels: { en: "Desktop", ar: "سطح المكتب" } },
+  { id: "All", labels: { en: "All", ar: "الكل", tr: "Hepsi" } },
+  { id: "Web", labels: { en: "Web", ar: "ويب", tr: "Web" } },
+  { id: "Mobile", labels: { en: "Mobile", ar: "جوال", tr: "Mobil" } },
+  { id: "Desktop", labels: { en: "Desktop", ar: "سطح المكتب", tr: "Masaüstü" } },
 ];
 
 const sharedProjects = [
@@ -108,6 +117,7 @@ const sharedProjects = [
     descriptions: {
       en: "Immorise is a German PropTech SaaS platform that automates real estate management through AI-driven 3D Digital Twins. It digitizes physical properties from 3D scans or floor plans, turns them into interactive BIM-compliant digital twins, and hosts them in a cloud 4D collaboration hub for owners, investors, asset managers, and facility teams.",
       ar: "Immorise is a German PropTech SaaS platform that automates real estate management through AI-driven 3D Digital Twins. It digitizes physical properties from 3D scans or floor plans, turns them into interactive BIM-compliant digital twins, and hosts them in a cloud 4D collaboration hub for owners, investors, asset managers, and facility teams.",
+      tr: "Immorise, yapay zeka destekli 3D Dijital İkizler aracılığıyla gayrimenkul yönetimini otomatikleştiren bir Alman PropTech SaaS platformudur. Fiziksel mülkleri 3D taramalardan veya kat planlarından dijitalleştirir, bunları etkileşimli BIM uyumlu dijital ikizlere dönüştürür ve mülk sahipleri, yatırımcılar, varlık yöneticileri ve tesis ekipleri için bulut tabanlı bir 4D iş birliği merkezinde barındırır.",
     },
   },
   {
@@ -137,6 +147,7 @@ const sharedProjects = [
     descriptions: {
       en: "Diwan Group is a digital media company and Multi-Channel Network platform serving MENA's creator economy. The platform connects creators, brands, and producers through one ecosystem for channel growth, brand partnership matching, content management, media asset monetization, and audience engagement at scale.",
       ar: "Diwan Group is a digital media company and Multi-Channel Network platform serving MENA's creator economy. The platform connects creators, brands, and producers through one ecosystem for channel growth, brand partnership matching, content management, media asset monetization, and audience engagement at scale.",
+      tr: "Diwan Group, Orta Doğu ve Kuzey Afrika (MENA) bölgesinin içerik oluşturucu ekonomisine hizmet veren bir dijital medya şirketi ve Çok Kanallı Ağ (MCN) platformudur. Platform; içerik oluşturucuları, markaları ve yapımcıları kanal büyümesi, marka ortaklığı eşleştirmesi, içerik yönetimi, medya varlığı paraya dönüştürme ve geniş ölçekli kitle katılımı için tek bir ekosistemde birleştirir.",
     },
   },
   {
@@ -166,6 +177,7 @@ const sharedProjects = [
     descriptions: {
       en: "Bridge MENA is a business expansion platform that guides international companies through UAE and Saudi market entry. It covers company formation, HR and payroll, government relations, serviced offices, industry-specific growth strategies, a consultation funnel, a resources hub, and a Business Setup Cost Calculator.",
       ar: "Bridge MENA is a business expansion platform that guides international companies through UAE and Saudi market entry. It covers company formation, HR and payroll, government relations, serviced offices, industry-specific growth strategies, a consultation funnel, a resources hub, and a Business Setup Cost Calculator.",
+      tr: "Bridge MENA, uluslararası şirketlerin BAE ve Suudi Arabistan pazarına giriş süreçlerine rehberlik eden bir iş genişletme platformudur. Şirket kuruluşu, İK ve bordro, devlet ilişkileri, hazır ofisler, sektöre özel büyüme stratejileri, danışmanlık hunisi, kaynak merkezi ve İş Kurma Maliyeti Hesaplayıcısını kapsar.",
     },
   },
   {
@@ -204,6 +216,7 @@ const sharedProjects = [
     descriptions: {
       en: "SDR Mobile is an enterprise field sales management platform by Açılımsoft that empowers sales teams with mobile tools for hot sales, order collection, route optimization, and real-time reporting. The platform provides easy-to-use mobile apps for field reps and full operational control for the back office, serving 1,000+ active field users across industries including FMCG, food & beverage, and wholesale distribution.",
       ar: "SDR Mobile هو منصة إدارة مبيعات ميدانية متكاملة من Açılımsoft تمكّن فرق المبيعات من أدوات متنقلة للبيع المباشر وجمع الطلبات وتحسين المسارات وإعداد التقارير الفورية. توفر المنصة تطبيقات جوال سهلة الاستخدام للمندوبين الميدانيين وتحكمًا تشغيليًا كاملاً للمكتب الرئيسي، وتخدم أكثر من 1,000 مستخدم ميداني نشط في قطاعات السلع الاستهلاكية والأغذية والتوزيع.",
+      tr: "SDR Mobil, Açılımsoft tarafından geliştirilen ve satış ekiplerini sıcak satış, sipariş toplama, rota optimizasyonu ve gerçek zamanlı raporlama için mobil araçlarla güçlendiren kurumsal bir saha satış yönetimi platformudur. Platform, saha temsilcileri için kullanımı kolay mobil uygulamalar ve arka ofis için tam operasyonel kontrol sağlayarak hızlı tüketim ürünleri, yiyecek-içecek ve toptan dağıtım dahil olmak üzere çeşitli sektörlerde 1.000'den fazla aktif saha kullanıcısına hizmet vermektedir.",
     },
   },
   {
@@ -244,6 +257,7 @@ const sharedProjects = [
     descriptions: {
       en: "Three-S is an enterprise field team management and merchandising platform by Açılımsoft that enables companies to plan, monitor, measure, and manage field operations in real time. The platform collects critical data about own and competitor products from retail points, provides route management, POP tracking, shelf compliance monitoring, competitive price analysis, and detailed reporting — serving 5,000+ active users across FMCG and retail sectors.",
       ar: "Three-S هو منصة إدارة فرق ميدانية ومتابعة تجارية متكاملة من Açılımsoft تمكّن الشركات من تخطيط ومراقبة وقياس وإدارة العمليات الميدانية في الوقت الفعلي. تجمع المنصة بيانات مهمة عن المنتجات الخاصة والمنافسة من نقاط البيع، وتوفر إدارة المسارات وتتبع نقاط الشراء ومراقبة الامتثال على الرفوف وتحليل الأسعار التنافسية وإعداد التقارير المفصلة — تخدم أكثر من 5,000 مستخدم نشط في قطاعات السلع الاستهلاكية والتجزئة.",
+      tr: "Three-S, Açılımsoft tarafından geliştirilen ve şirketlerin saha operasyonlarını gerçek zamanlı olarak planlamasını, izlemesini, ölçmesini ve yönetmesini sağlayan kurumsal bir saha ekibi yönetimi ve tanzim-teşhir platformudur. Perakende noktalarından kendi ürünleri ve rakip ürünler hakkında kritik veriler toplayan platform, rota yönetimi, POP takibi, raf uyumluluğu izleme, rakip fiyat analizi ve detaylı raporlama sunarak hızlı tüketim ürünleri ve perakende sektörlerinde 5.000'den fazla aktif kullanıcıya hizmet vermektedir.",
     },
   },
   {
@@ -282,6 +296,7 @@ const sharedProjects = [
     descriptions: {
       en: "SDR B2B is an enterprise wholesale e-commerce and dealer management platform by Açılımsoft that simplifies B2B business processes. The platform provides a 24/7 online store for wholesale orders and payments, an intuitive admin panel for product and inventory management, dealer-specific pricing and promotions, shipment coordination, and comprehensive sales reporting — enabling businesses to build and manage their digital sales channels effortlessly.",
       ar: "SDR B2B هو منصة تجارة إلكترونية بالجملة وإدارة وكلاء متكاملة من Açılımsoft تبسّط عمليات الأعمال التجارية بين الشركات. توفر المنصة متجرًا إلكترونيًا يعمل على مدار الساعة لطلبات الجملة والمدفوعات، ولوحة إدارة سهلة الاستخدام لإدارة المنتجات والمخزون، وتسعير وعروض خاصة بالوكلاء، وتنسيق الشحنات، وتقارير مبيعات شاملة — مما يمكّن الشركات من بناء وإدارة قنوات مبيعاتها الرقمية بسهولة.",
+      tr: "SDR B2B, Açılımsoft tarafından geliştirilen ve B2B iş süreçlerini basitleştiren kurumsal bir toptan e-ticaret ve bayi yönetimi platformudur. Platform, toptan sipariş ve ödeme işlemleri için 7/24 çevrimiçi mağaza, ürün ve envanter yönetimi için sezgisel bir yönetici paneli, bayiye özel fiyatlandırma ve promosyonlar, sevkiyat koordinasyonu ve kapsamlı satış raporlaması sunarak işletmelerin dijital satış kanallarını zahmetsizce oluşturmasını ve yönetmesini sağlar.",
     },
   },
   {
@@ -305,7 +320,8 @@ const sharedProjects = [
     previewUrl: "https://flowhr.karbejha.site",
     descriptions: {
       en: "FlowHR is an enterprise-grade HR management platform that streamlines organization workflow, time tracking, leaf approvals, and analytics. Built using Next.js and TypeScript, the system integrates a comprehensive employee database, secure role-based access control, and real-time dashboard analytics, reducing administrative HR overhead by up to 60%.",
-      ar: "FlowHR هو نظام متكامل لإدارة الموارد البشرية يبسط سير عمل المؤسسة، وتتبع الوقت، والموافقة على الإجازات، والتحليلات. تم بناء النظام باستخدام Next.js وTypeScript، وهو يدمج قاعدة بيانات شاملة للموظفين، وتحكمًا آمنًا في الوصول على أساس الأدوار، وتحليلات فورية للوحة التحكم، مما يقلل من العبء الإداري للموارد البشرية بنسبة تصل إلى 60٪.",
+      ar: "FlowHR هو نظام متكامل لإدارة الموارد البشرية يبسط سير عمل المؤسسة، وتتبع الوقت، والموافقة على الإجازات، والتحليلات. تم بناء النظام باستخدام Next.js وTypeScript، وهو يدمj قاعدة بيانات شاملة للموظفين، وتحكمًا آمنًا في الوصول على أساس الأدوار، وتحليلات فورية للوحة التحكم، مما يقلل من العبء الإداري للموارد البشرية بنسبة تصل إلى 60٪.",
+      tr: "FlowHR, kuruluş iş akışını, zaman takibini, izin onaylarını ve analizleri kolaylaştıran kurumsal düzeyde bir İK yönetim platformudur. Next.js ve TypeScript kullanılarak oluşturulan sistem, kapsamlı bir çalışan veri tabanını, güvenli rol tabanlı erişim kontrolünü ve gerçek zamanlı gösterge paneli analizlerini entegre ederek idari İK yükünü %60'a kadar azaltır.",
     },
   },
   {
@@ -337,6 +353,7 @@ const sharedProjects = [
     descriptions: {
       en: "Rankify is a professional SEO marketing and website optimization SaaS platform that helps businesses scale their digital strategy. The platform integrates advanced analytics dashboards, customizable website templates, comprehensive search engine optimization tools, and lead generation capabilities — empowering users to code smarter and rank higher.",
       ar: "Rankify هي منصة SaaS احترافية للتسويق وتحسين محركات البحث وتصميم المواقع تساعد الشركات على توسيع استراتيجيتها الرقمية. تدمج المنصة لوحات تحكم متقدمة للتحليلات، وقوالب مواقع قابلة للتخصيص، وأدوات شاملة لتحسين محركات البحث، وقدرات توليد العملاء المحتملين — مما يمكن المستخدمين من البرمجة بذكاء والظهور في المراتب الأولى.",
+      tr: "Rankify, işletmelerin dijital stratejilerini ölçeklendirmelerine yardımcı olan profesyonel bir SEO pazarlama ve web sitesi optimizasyonu SaaS platformudur. Gelişmiş analitik gösterge panellerini, özelleştirilebilir web sitesi şablonlarını, kapsamlı arama motoru optimizasyonu araçlarını ve olası satış yaratma yeteneklerini entegre ederek kullanıcıların daha akıllıca kod yazmasını ve daha üst sıralarda yer almasını sağlar.",
     },
   },
   {
@@ -373,6 +390,7 @@ const sharedProjects = [
     descriptions: {
       en: "Misas Sanal Market is a full-service online grocery delivery platform that allows customers in Elazığ, Turkey, to order fresh produce, dairy, meats, personal care, and household items either via the web or mobile app. The system coordinates inventory across retail stores, facilitates order dispatching, enables secure payment processing, and optimizes delivery logistics to ensure groceries arrive at the user's door on their scheduled time slots.",
       ar: "Misas Sanal Market هي منصة متكاملة لتوصيل طلبات البقالة والمواد الغذائية عبر الإنترنت تتيح للعملاء طلب المنتجات الطازجة، ومنتجات الألبان، واللحوم، ومستحضرات العناية الشخصية، والمستلزمات المنزلية عبر الموقع أو تطبيق الجوال. ينسق النظام المخزون عبر المتاجر، ويسهل توزيع الطلبات، ويوفر معالجة آمنة للمدفوعات، ويحسن لوجستيات التوصيل لضمان وصول الطلبات إلى باب العميل في الفترات الزمنية المحددة.",
+      tr: "Misaş Sanal Market, Elazığ'daki müşterilerin web veya mobil uygulama üzerinden taze meyve-sebze, süt ürünleri, et, kişisel bakım ve ev temizlik ürünleri sipariş etmelerini sağlayan tam hizmet sunan bir çevrimiçi market teslimat platformudur. Sistem, perakende mağazalar genelindeki envanteri koordine eder, sipariş gönderimini kolaylaştırır, güvenli ödeme işlemlerini sağlar ve siparişlerin belirlenen zaman dilimlerinde kullanıcının kapısına ulaşmasını garanti etmek için teslimat lojistiğini optimize eder.",
     },
   },
 ];
@@ -696,6 +714,160 @@ export const dictionaries = {
       projects: "عرض المشاريع",
       metadataTitle: "الصفحة غير موجودة - محمد كربجها",
       metadataDescription: "الصفحة التي تبحث عنها غير موجودة.",
+    },
+  },
+  tr: {
+    seo: {
+      title:
+        "Mohamad Karbejha - Full Stack Geliştirici | Next.js, TypeScript, Node.js",
+      description:
+        "Ölçeklenebilir web uygulamaları geliştirme konusunda 6 yıldan fazla deneyime sahip Full Stack Geliştirici. Ana teknoloji yığını: Next.js, TypeScript, Node.js, Express.js, PostgreSQL. İstanbul, Türkiye merkezli - uzaktan veya taşınarak çalışmaya uygun.",
+      webPageName: "Mohamad Karbejha - Full Stack Geliştirici Portfolyosu",
+      websiteDescription:
+        "Full stack geliştirme becerilerini ve projelerini gösteren profesyonel portfolyo.",
+      personDescription:
+        "Next.js, TypeScript, Node.js, Express.js ve PostgreSQL kullanarak ölçeklenebilir web uygulamaları oluşturan 6 yıldan fazla deneyimli Full Stack Geliştirici.",
+      imageAlt: "Mohamad Karbejha - Full Stack Geliştirici",
+    },
+    nav: {
+      ariaLabel: "Ana menü",
+      logoLabel: "Ana sayfaya git",
+      openMenu: "Menüyü aç",
+      closeMenu: "Menüyü kapat",
+      languageToggleLabel: "Dili değiştir",
+      links: [
+        { title: "Hakkımda", path: "#about" },
+        { title: "Projeler", path: "#projects" },
+        { title: "İletişim", path: "#contact" },
+      ],
+    },
+    hero: {
+      ariaLabel: "Giriş bölümü",
+      greeting: "Merhaba, Ben Mohamad Karbejha",
+      role: "Full Stack Geliştirici - 6+ Yıllık Deneyim",
+      intro: "Veri tabanından kullanıcı arayüzüne kadar hızlı ve ölçeklenebilir web uygulamaları geliştiriyorum.",
+      stack: "Ana teknoloji yığını: Next.js, TypeScript, Node.js, PostgreSQL, Express.",
+      skillsLabel: "Önemli beceriler",
+      keySkills: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Express.js",
+        "React",
+        "Python",
+      ],
+      hireMe: "İletişime Geç",
+      hireMeLabel: "İş fırsatları için Mohamad Karbejha ile iletişime geçin",
+      cv: "Özgeçmişi Görüntüle",
+      cvLabel: "Mohamad Karbejha'nın özgeçmişini görüntüleyin",
+      imageAlt: "Mohamad Karbejha - Full Stack Geliştirici ve Yazılım Mühendisi",
+    },
+    achievements: {
+      ariaLabel: "Kariyer başarıları",
+      locale: "tr-TR",
+      items: [
+        { metric: "Proje", value: "9", postfix: "+" },
+        { metric: "Yıllık Deneyim", value: "6", postfix: "+" },
+      ],
+    },
+    about: {
+      heading: "Hakkımda",
+      imageAlt: "Mohamad Karbejha profesyonel çalışma alanı",
+      detailsLabel: "Hakkımda bölümü ayrıntıları",
+      paragraphs: [
+        "Şu anda Techtile (Almanya) bünyesinde uzaktan çalışan, 6 yıldan fazla profesyonel deneyime sahip bir Full Stack Geliştiriciyim. Next.js, TypeScript, Node.js, Express.js ve PostgreSQL kullanarak üretime hazır web uygulamaları geliştirme konusunda uzmanım.",
+        "Doğuş Üniversitesi'nden iki lisans derecem var: Bilgisayar Mühendisliği ve Robot Mühendisliği (Çift Anadal). İK, denizcilik sistemleri, e-ticaret ve SaaS platformları gibi farklı sektörlerde çalıştım.",
+        "Çok dilliyim (Arapça, İngilizce, Türkçe) ve yeni uzaktan çalışma fırsatlarına veya yer değiştirmeye açığım.",
+      ],
+      tabs: [
+        {
+          title: "Beceriler",
+          id: "skills",
+          type: "skills",
+          groups: [
+            {
+              label: "Ön Yüz (Frontend)",
+              value: "Next.js, React, TypeScript, JavaScript, HTML/CSS",
+            },
+            { label: "Arka Yüz (Backend)", value: "Node.js, Express.js, Python, Django" },
+            { label: "Veri Tabanı", value: "PostgreSQL, MongoDB, MySQL" },
+            { label: "DevOps", value: "Docker, CI/CD, Git" },
+            { label: "Diğer", value: "REST API'ler, WebSocket, Socket.IO" },
+          ],
+        },
+        {
+          title: "Eğitim",
+          id: "education",
+          type: "list",
+          items: [
+            "Bilgisayar Mühendisliği - Doğuş Üniversitesi - İstanbul, Türkiye",
+            "Robot Mühendisliği (Çift Anadal) - Doğuş Üniversitesi - İstanbul, Türkiye",
+            "Fullstack Web Geliştirme - Re:Coded",
+          ],
+        },
+        {
+          title: "Sertifikalar",
+          id: "certifications",
+          type: "certificates",
+          groups: certificateGroups,
+        },
+      ],
+    },
+    projects: {
+      heading: "Projelerim",
+      filtersLabel: "Projeleri türüne göre filtrele",
+      filters: buildFilters("tr"),
+      cards: {
+        repositoryLabel: "{title} GitHub deposunu görüntüle",
+        previewLabel: "{title} canlı demosunu görüntüle",
+        imageAlt: "{title} proje ekran görüntüsü",
+        techLabel: "{title} teknolojileri",
+        role: "Rol",
+        showMore: "Daha fazla göster",
+        showLess: "Daha az göster",
+        github: "GitHub",
+        liveDemo: "Canlı Demo",
+        watchDemo: "Demoyu İzle",
+      },
+      items: buildProjects("tr"),
+    },
+    contact: {
+      heading: "Birlikte Çalışalım",
+      description:
+        "Şu anda tam zamanlı uzaktan pozisyonlara ve serbest projelere açığım. İletişime geçmekten çekinmeyin - 24 saat içinde yanıt veriyorum.",
+      githubLabel: "Mohamad Karbejha'yı GitHub'da ziyaret edin",
+      linkedinLabel: "Mohamad Karbejha'yı LinkedIn'de ziyaret edin",
+      success: "E-posta başarıyla gönderildi!",
+      successFollowUp: "Yakında size döneceğim.",
+      emailLabel: "E-posta adresiniz",
+      emailPlaceholder: "E-posta adresinizi girin",
+      emailErrorPrefix: "E-posta",
+      subjectLabel: "Konu",
+      subjectPlaceholder: "Konuyu girin",
+      messageLabel: "Mesaj",
+      messagePlaceholder: "Hakkında konuşmak istediğiniz konu...",
+      messageErrorPrefix: "Mesaj",
+      sending: "Gönderiliyor...",
+      send: "Mesaj Gönder",
+    },
+    footer: {
+      logoLabel: "Ana sayfaya git",
+      tagline: "",
+      copyright: "Telif Hakkı 2026 Mohamad Karbejha © Tüm hakları saklıdır.",
+    },
+    loading: {
+      title: "Yükleniyor...",
+      description: "Mohamad Karbejha'nın portfolyosu yüklenirken lütfen bekleyin",
+    },
+    notFound: {
+      title: "Sayfa Bulunamadı",
+      description:
+        "Aradığınız sayfa mevcut değil veya taşınmış.",
+      home: "Ana Sayfaya Git",
+      projects: "Projeleri Görüntüle",
+      metadataTitle: "Sayfa Bulunamadı - Mohamad Karbejha",
+      metadataDescription: "Aradığınız sayfa mevcut değil.",
     },
   },
 };

@@ -100,6 +100,7 @@ export const siteConfig = {
 const languageAlternates = {
   en: getLocalePath("en"),
   ar: getLocalePath("ar"),
+  tr: getLocalePath("tr"),
   "x-default": getLocalePath("en"),
 };
 
@@ -125,6 +126,16 @@ export const getLocalizedMetadata = (locale = defaultLocale) => {
             "مطور Next.js",
             "مطور TypeScript",
             "مطور Node.js",
+          ]
+        : locale === "tr"
+        ? [
+            ...siteConfig.keywords,
+            "Mohamad Karbejha",
+            "Full Stack Geliştirici",
+            "Next.js Geliştirici",
+            "TypeScript Geliştirici",
+            "Yazılım Mühendisi İstanbul",
+            "Bilgisayar Mühendisi",
           ]
         : siteConfig.keywords,
     authors: [{ name: siteConfig.author.name }],

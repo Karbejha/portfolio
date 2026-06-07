@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const languages = {
     en: `${baseUrl}/`,
     ar: `${baseUrl}/ar/`,
+    tr: `${baseUrl}/tr/`,
   }
 
   return [
@@ -20,6 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/ar/`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: {
+        languages,
+      },
+    },
+    {
+      url: `${baseUrl}/tr/`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
