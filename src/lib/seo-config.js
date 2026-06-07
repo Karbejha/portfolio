@@ -100,6 +100,7 @@ export const siteConfig = {
 const languageAlternates = {
   en: getLocalePath("en"),
   ar: getLocalePath("ar"),
+  "x-default": getLocalePath("en"),
 };
 
 const absoluteUrl = (path = "/") => `${siteConfig.url}${path}`;
