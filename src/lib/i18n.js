@@ -459,7 +459,7 @@ export const dictionaries = {
       ariaLabel: "Career achievements",
       locale: "en-US",
       items: [
-        { metric: "Projects", value: "9", postfix: "+" },
+        { metric: "Projects", value: "20", postfix: "+" },
         { metric: "Years of Experience", value: "6", postfix: "+" },
       ],
     },
@@ -614,7 +614,7 @@ export const dictionaries = {
       ariaLabel: "إنجازات مهنية",
       locale: "ar",
       items: [
-        { metric: "مشروعاً", value: "9", postfix: "+" },
+        { metric: "مشروعاً", value: "20", postfix: "+" },
         { metric: "سنوات خبرة", value: "6", postfix: "+" },
       ],
     },
@@ -767,7 +767,7 @@ export const dictionaries = {
       ariaLabel: "Kariyer başarıları",
       locale: "tr-TR",
       items: [
-        { metric: "Proje", value: "9", postfix: "+" },
+        { metric: "Proje", value: "20", postfix: "+" },
         { metric: "Yıllık Deneyim", value: "6", postfix: "+" },
       ],
     },
