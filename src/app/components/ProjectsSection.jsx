@@ -65,10 +65,13 @@ const ProjectsSection = ({ content }) => {
               role={project.role}
               highlights={project.highlights}
               imgUrl={project.image}
+              images={project.images}
+              youtubeUrl={project.youtubeUrl}
               techStack={project.techStack}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
               labels={content.cards}
+              priority={index < 2}
             />
           </motion.li>
         ))}

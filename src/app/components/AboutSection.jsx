@@ -9,8 +9,8 @@ const AboutTabContent = ({ tab }) => {
     return (
       <ul className="space-y-2 ps-2">
         {tab.groups.map((group) => (
-          <li key={group.label}>
-            <strong>{group.label}:</strong> {group.value}
+          <li key={group.label} className="text-[#ADB7BE]">
+            <strong className="text-primary-400 font-semibold me-1">{group.label}:</strong> {group.value}
           </li>
         ))}
       </ul>
@@ -23,7 +23,7 @@ const AboutTabContent = ({ tab }) => {
         {tab.groups.map((group) => (
           <div key={group.provider}>
             <h3 className="text-pink-500">{group.provider}</h3>
-            <ul className="list-disc space-y-1 ps-5">
+            <ul className="list-disc space-y-1 ps-5 text-[#ADB7BE]">
               {group.certificates.map((certificate) => (
                 <li key={certificate.href}>
                   <Link
@@ -44,7 +44,7 @@ const AboutTabContent = ({ tab }) => {
   }
 
   return (
-    <ul className="list-disc space-y-2 ps-5">
+    <ul className="list-disc space-y-2 ps-5 text-[#ADB7BE]">
       {tab.items.map((item) => (
         <li key={item}>{item}</li>
       ))}
@@ -69,9 +69,9 @@ const AboutSection = ({ content, direction }) => {
     <section className="text-white" id="about" aria-labelledby="about-heading">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
-          src="/images/about-image.png"
-          width={500}
-          height={500}
+          src="/images/about-workspace.png"
+          width={600}
+          height={600}
           sizes="(min-width: 768px) 50vw, 100vw"
           alt={content.imageAlt}
           className="rounded-lg"
@@ -81,7 +81,7 @@ const AboutSection = ({ content, direction }) => {
           <h2 id="about-heading" className="text-4xl font-bold text-white mb-4">
             {content.heading}
           </h2>
-          <p className="text-base lg:text-lg mb-6">
+          <p className="text-base lg:text-lg mb-6 text-[#ADB7BE]">
             {content.paragraphs.map((paragraph) => (
               <React.Fragment key={paragraph}>
                 {paragraph}

@@ -36,6 +36,16 @@ const nextConfig = {
         hostname: 'bmms-landing.vercel.app',
         pathname: '/logo.png',
       },
+      {
+        protocol: 'https',
+        hostname: 'acilimsoft.com',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'misas.com.tr',
+        pathname: '/wp-content/uploads/**',
+      },
     ],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
