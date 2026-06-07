@@ -1,22 +1,51 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const isValidProjectUrl = (url) => Boolean(url && url !== "/");
 
+const createProjectId = (projectId) => `project-${projectId}-details`;
+
+const getCollapsedDescription = (description, maxLength = 190) => {
+  if (!description || description.length <= maxLength) {
+    return description;
+  }
+
+  const excerpt = description.slice(0, maxLength).trim();
+  const lastSpace = excerpt.lastIndexOf(" ");
+
+  return `${excerpt.slice(0, lastSpace > 0 ? lastSpace : maxLength).trim()}...`;
+};
+
 const ProjectCard = ({
+  projectId,
   imgUrl,
   title,
+  tagline,
   description,
+  role,
+  highlights = [],
   techStack = [],
   gitUrl,
   previewUrl,
   labels,
 }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const hasGitUrl = isValidProjectUrl(gitUrl);
   const hasPreviewUrl = isValidProjectUrl(previewUrl) && previewUrl !== gitUrl;
+  const hasExpandableContent = Boolean(
+    role || highlights.length > 0 || (description?.length ?? 0) > 170,
+  );
   const formatLabel = (template) => template.replace("{title}", title);
+  const detailsId = createProjectId(projectId);
+  const visibleDescription =
+    hasExpandableContent && !isExpanded
+      ? getCollapsedDescription(description)
+      : description;
 
   return (
     <article className="flex h-full flex-col">
@@ -53,27 +82,73 @@ const ProjectCard = ({
           )}
         </div>
       </div>
-      <div className="mt-3 flex h-[19rem] flex-col rounded-b-xl bg-[#181818] px-4 py-6 text-white md:h-80">
-        <h3 className="mb-2 line-clamp-2 min-h-[3.5rem] text-xl font-semibold">
-          {title}
-        </h3>
-        <p className="line-clamp-3 min-h-[5.25rem] text-[#ADB7BE]" title={description}>
-          {description}
-        </p>
+
+      <div className="mt-3 flex flex-1 flex-col rounded-b-xl bg-[#181818] px-4 py-6 text-white">
+        <h3 className="mb-2 text-xl font-semibold">{title}</h3>
+        {tagline && (
+          <p className="mb-3 text-sm font-medium text-primary-400">
+            {tagline}
+          </p>
+        )}
+
         <div
-          className="mt-4 flex min-h-[2rem] flex-wrap gap-2"
+          id={detailsId}
+          className="space-y-4 text-[#ADB7BE]"
+        >
+          <p>{visibleDescription}</p>
+          {isExpanded && (
+            <>
+              {role && (
+                <p className="text-sm">
+                  <span className="font-semibold text-white">
+                    {labels.role}:{" "}
+                  </span>
+                  {role}
+                </p>
+              )}
+              {highlights.length > 0 && (
+                <ul className="list-disc space-y-2 ps-5 text-sm">
+                  {highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
+            </>
+          )}
+        </div>
+
+        {hasExpandableContent && (
+          <button
+            type="button"
+            aria-controls={detailsId}
+            aria-expanded={isExpanded}
+            onClick={() => setIsExpanded((current) => !current)}
+            className="mt-3 inline-flex w-fit items-center gap-1 rounded-full text-sm font-medium text-primary-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-[#181818]"
+          >
+            {isExpanded ? labels.showLess : labels.showMore}
+            <ChevronDownIcon
+              className={`h-4 w-4 transition-transform duration-200 ${
+                isExpanded ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+        )}
+
+        <div
+          className="mt-5 flex flex-wrap content-start gap-2"
           aria-label={formatLabel(labels.techLabel)}
         >
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="text-xs text-white bg-[#33353F] rounded-full px-3 py-1"
+              className="h-fit text-xs text-white bg-[#33353F] rounded-full px-3 py-1"
             >
               {tech}
             </span>
           ))}
         </div>
-        <div className="mt-auto flex flex-wrap gap-3 pt-5">
+
+        <div className="mt-auto flex flex-wrap gap-3 pt-6">
           {hasGitUrl ? (
             <Link
               href={gitUrl}
@@ -87,7 +162,6 @@ const ProjectCard = ({
           ) : (
             <span
               aria-disabled="true"
-              title={labels.unavailableGithub}
               className="inline-flex items-center gap-2 rounded-full border border-[#ADB7BE] px-4 py-2 text-sm text-[#ADB7BE] opacity-50"
             >
               <CodeBracketIcon className="h-4 w-4" />

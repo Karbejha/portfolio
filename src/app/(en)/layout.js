@@ -32,7 +32,11 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" href="/icon.ico" sizes="any" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
@@ -50,7 +54,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         {googleAnalyticsId ? (
           <>
             <Script

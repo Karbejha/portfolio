@@ -5,7 +5,38 @@ const nextConfig = {
   
   // Image optimization
   images: {
-    domains: ['drive.google.com', 'github.com', 'linkedin.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'drive.google.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'linkedin.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'immorise.com',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static1.squarespace.com',
+        pathname: '/static/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'bmms-landing.vercel.app',
+        pathname: '/logo.png',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -51,14 +82,6 @@ const nextConfig = {
       { source: '/skills', destination: '/', permanent: true },
       { source: '/achievements', destination: '/', permanent: true },
     ];
-  },
-
-  // Experimental features for better performance
-  experimental: {
-    optimizePackageImports: [
-      '@heroicons/react',
-      'react-type-animation',
-    ],
   },
 
   // Bundle analyzer for optimization

@@ -59,7 +59,12 @@ export const viewport = {
 
 export default function ArabicRootLayout({ children }) {
   return (
-    <html lang="ar" dir="rtl" className={`${qomraArabic.variable} ${mono.variable}`}>
+    <html
+      lang="ar"
+      dir="rtl"
+      className={`${qomraArabic.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" href="/icon.ico" sizes="any" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
@@ -77,7 +82,7 @@ export default function ArabicRootLayout({ children }) {
           }}
         />
       </head>
-      <body className={qomraArabic.className}>
+      <body className={qomraArabic.className} suppressHydrationWarning>
         {googleAnalyticsId ? (
           <>
             <Script

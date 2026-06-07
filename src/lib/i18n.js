@@ -81,6 +81,97 @@ const projectFilters = [
 
 const sharedProjects = [
   {
+    id: 11,
+    title: "Immorise",
+    image: "https://immorise.com/wp-content/uploads/2024/09/screenshot.jpg",
+    tag: ["All", "Web"],
+    tagline:
+      "AI-powered Digital Twin & Lifecycle Management Platform for Real Estate",
+    role:
+      "Full-Stack Developer responsible for the Twin Platform web layer, API integrations, dashboards, and property management modules.",
+    highlights: [
+      "AI-automated BIM modeling from point cloud and scan data",
+      "4D cloud collaboration for energy and space management",
+      "ESG, due diligence, CO2 monitoring, and stakeholder access modules",
+      "Area calculations using DIN277, Gif, and WoFlV standards",
+      "Trusted by the NVIDIA AI Inception Program",
+    ],
+    techStack: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "BIM/IFC",
+    ],
+    gitUrl: null,
+    previewUrl: "https://immorise.com",
+    descriptions: {
+      en: "Immorise is a German PropTech SaaS platform that automates real estate management through AI-driven 3D Digital Twins. It digitizes physical properties from 3D scans or floor plans, turns them into interactive BIM-compliant digital twins, and hosts them in a cloud 4D collaboration hub for owners, investors, asset managers, and facility teams.",
+      ar: "Immorise is a German PropTech SaaS platform that automates real estate management through AI-driven 3D Digital Twins. It digitizes physical properties from 3D scans or floor plans, turns them into interactive BIM-compliant digital twins, and hosts them in a cloud 4D collaboration hub for owners, investors, asset managers, and facility teams.",
+    },
+  },
+  {
+    id: 12,
+    title: "Diwan Group",
+    image:
+      "https://static1.squarespace.com/static/6540ce1603700862d2ee2de7/t/65646db9d184914c4fe0c65b/1701080505355/Diwan_Logo_White+350px.png",
+    tag: ["All", "Web"],
+    tagline: "MENA's Leading Content Network & Influencer Marketing Platform",
+    role:
+      "Full-Stack Developer architecting core web infrastructure, onboarding, creator-brand matching, and content management backend.",
+    highlights: [
+      "Multi-role platform for creators, brands, and media producers",
+      "Creator analytics and brand partnership matching engine",
+      "Content management and media asset monetization workflows",
+      "Multi-language MCN infrastructure for MENA audiences",
+    ],
+    techStack: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Multi-tenant",
+    ],
+    gitUrl: null,
+    previewUrl: "https://www.diwangroup.com",
+    descriptions: {
+      en: "Diwan Group is a digital media company and Multi-Channel Network platform serving MENA's creator economy. The platform connects creators, brands, and producers through one ecosystem for channel growth, brand partnership matching, content management, media asset monetization, and audience engagement at scale.",
+      ar: "Diwan Group is a digital media company and Multi-Channel Network platform serving MENA's creator economy. The platform connects creators, brands, and producers through one ecosystem for channel growth, brand partnership matching, content management, media asset monetization, and audience engagement at scale.",
+    },
+  },
+  {
+    id: 13,
+    title: "Bridge MENA",
+    image: "https://bmms-landing.vercel.app/logo.png",
+    tag: ["All", "Web"],
+    tagline:
+      "Full-Service MENA Market Entry & Business Formation Platform for UAE & Saudi Arabia",
+    role:
+      "Full-Stack Developer building the platform architecture, marketing site, service catalog, dynamic routing, consultation funnel, and cost calculator.",
+    highlights: [
+      "Dynamic catalog for 30+ services across UAE and KSA expansion tracks",
+      "Business Setup Cost Calculator and consultation booking flow",
+      "Multi-region SEO architecture with App Router and SSR",
+      "Dedicated journeys for enterprises, SMEs, high-growth businesses, and startups",
+    ],
+    techStack: [
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Vercel",
+    ],
+    gitUrl: null,
+    previewUrl: "https://bmms-landing.vercel.app",
+    descriptions: {
+      en: "Bridge MENA is a business expansion platform that guides international companies through UAE and Saudi market entry. It covers company formation, HR and payroll, government relations, serviced offices, industry-specific growth strategies, a consultation funnel, a resources hub, and a Business Setup Cost Calculator.",
+      ar: "Bridge MENA is a business expansion platform that guides international companies through UAE and Saudi market entry. It covers company formation, HR and payroll, government relations, serviced offices, industry-specific growth strategies, a consultation funnel, a resources hub, and a Business Setup Cost Calculator.",
+    },
+  },
+  {
     id: 1,
     title: "FlowHR",
     image: "/images/projects/1.png",
@@ -319,7 +410,9 @@ export const dictionaries = {
         previewLabel: "View {title} live demo",
         imageAlt: "{title} project screenshot",
         techLabel: "{title} technologies",
-        unavailableGithub: "GitHub link unavailable",
+        role: "Role",
+        showMore: "Show more",
+        showLess: "Show less",
         github: "GitHub",
         liveDemo: "Live Demo",
       },
@@ -471,7 +564,9 @@ export const dictionaries = {
         previewLabel: "عرض النسخة الحية من {title}",
         imageAlt: "لقطة شاشة لمشروع {title}",
         techLabel: "تقنيات {title}",
-        unavailableGithub: "رابط GitHub غير متوفر",
+        role: "الدور",
+        showMore: "عرض المزيد",
+        showLess: "عرض أقل",
         github: "GitHub",
         liveDemo: "عرض مباشر",
       },

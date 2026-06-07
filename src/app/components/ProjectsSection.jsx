@@ -58,8 +58,12 @@ const ProjectsSection = ({ content }) => {
             transition={{ duration: 0.3, delay: index * 0.2 }}
           >
             <ProjectCard
+              projectId={project.id}
               title={project.title}
+              tagline={project.tagline}
               description={project.description}
+              role={project.role}
+              highlights={project.highlights}
               imgUrl={project.image}
               techStack={project.techStack}
               gitUrl={project.gitUrl}
