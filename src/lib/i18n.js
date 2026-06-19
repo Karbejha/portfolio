@@ -393,13 +393,115 @@ const sharedProjects = [
       tr: "Misaş Sanal Market, Elazığ'daki müşterilerin web veya mobil uygulama üzerinden taze meyve-sebze, süt ürünleri, et, kişisel bakım ve ev temizlik ürünleri sipariş etmelerini sağlayan tam hizmet sunan bir çevrimiçi market teslimat platformudur. Sistem, perakende mağazalar genelindeki envanteri koordine eder, sipariş gönderimini kolaylaştırır, güvenli ödeme işlemlerini sağlar ve siparişlerin belirlenen zaman dilimlerinde kullanıcının kapısına ulaşmasını garanti etmek için teslimat lojistiğini optimize eder.",
     },
   },
+  {
+    id: 17,
+    featured: true,
+    title: "Maritime Ports Authority Information System (MPAIS)",
+    image: "/images/projects/mpais/1-login.png",
+    images: [
+      "/images/projects/mpais/1-login.png",
+      "/images/projects/mpais/2-reports.png",
+      "/images/projects/mpais/3-weather.png",
+      "/images/projects/mpais/4-live-map.png",
+      "/images/projects/mpais/5-request-review.png",
+      "/images/projects/mpais/6-request-print.png",
+      "/images/projects/mpais/7-officer-dashboard.png",
+      "/images/projects/mpais/8-request-templates.png",
+      "/images/projects/mpais/9-live-map-alt.png",
+      "/images/projects/mpais/10-request-print-alt.png",
+    ],
+    tag: ["All", "Web"],
+    tagline:
+      "Comprehensive Vessel Traffic, Port Operations & Maritime Compliance Platform",
+    taglines: {
+      en: "Comprehensive Vessel Traffic, Port Operations & Maritime Compliance Platform",
+      ar: "منصة شاملة لحركة السفن وعمليات الميناء والامتثال البحري",
+      tr: "Kapsamlı Gemi Trafiği, Liman Operasyonları ve Denizcilik Uyumluluğu Platformu",
+    },
+    role: "Full-Stack Developer responsible for the monorepo architecture, secure backend APIs, role-based dashboards, vessel workflows, reporting, audit logs, and multilingual frontend.",
+    roles: {
+      en: "Full-Stack Developer responsible for the monorepo architecture, secure backend APIs, role-based dashboards, vessel workflows, reporting, audit logs, and multilingual frontend.",
+      ar: "مطوّر Full-Stack مسؤول عن بنية المونوريبو، وواجهات API الخلفية الآمنة، ولوحات التحكم المعتمدة على الأدوار، وسير عمل السفن، والتقارير، وسجلات التدقيق، والواجهة الأمامية متعددة اللغات.",
+      tr: "Monorepo mimarisi, güvenli backend API'leri, rol tabanlı paneller, gemi iş akışları, raporlama, denetim kayıtları ve çok dilli frontend'den sorumlu Full-Stack Developer.",
+    },
+    highlights: [
+      "Multi-role platform for shipping agents, port officers, VTS operators, and admins",
+      "Vessel registration, arrival notifications, ETA changes, and movement tracking",
+      "Pratique clearance workflow with certificate checks, attachments, and operation logs",
+      "VTS logbook, incident logs, equipment status logs, watch shift logs, and statistics",
+      "Violations, detentions, boycott blacklist, accounting, daily reports, and audit logging",
+      "Shared Zod schemas and TypeScript types across frontend and backend",
+      "Secure API design with authentication, authorization, validation, and audit trails",
+      "Multilingual Next.js interface using next-intl",
+    ],
+    highlightsByLocale: {
+      en: [
+        "Multi-role platform for shipping agents, port officers, VTS operators, and admins",
+        "Vessel registration, arrival notifications, ETA changes, and movement tracking",
+        "Pratique clearance workflow with certificate checks, attachments, and operation logs",
+        "VTS logbook, incident logs, equipment status logs, watch shift logs, and statistics",
+        "Violations, detentions, boycott blacklist, accounting, daily reports, and audit logging",
+        "Shared Zod schemas and TypeScript types across frontend and backend",
+        "Secure API design with authentication, authorization, validation, and audit trails",
+        "Multilingual Next.js interface using next-intl",
+      ],
+      ar: [
+        "منصة متعددة الأدوار لوكلاء الشحن وضباط الميناء ومشغلي VTS والمديرين",
+        "تسجيل السفن وإشعارات الوصول وتعديلات وقت الوصول المتوقع وتتبع الحركة",
+        "سير عمل لشهادات البراتيك مع فحص الشهادات والمرفقات وسجلات العمليات",
+        "سجل VTS وسجلات الحوادث وحالة المعدات والمناوبات والإحصاءات",
+        "إدارة المخالفات والاحتجاز والقائمة السوداء والمحاسبة والتقارير اليومية وسجلات التدقيق",
+        "مخططات Zod وأنواع TypeScript مشتركة بين الواجهة الأمامية والخلفية",
+        "تصميم API آمن مع المصادقة والتفويض والتحقق من المدخلات وسجلات التدقيق",
+        "واجهة Next.js متعددة اللغات باستخدام next-intl",
+      ],
+      tr: [
+        "Nakliye acenteleri, liman görevlileri, VTS operatörleri ve yöneticiler için çok rollü platform",
+        "Gemi kaydı, varış bildirimleri, ETA değişiklikleri ve hareket takibi",
+        "Sertifika kontrolleri, ekler ve operasyon kayıtları içeren pratique izin süreci",
+        "VTS seyir defteri, olay kayıtları, ekipman durum kayıtları, vardiya kayıtları ve istatistikler",
+        "İhlaller, alıkoymalar, boykot kara listesi, muhasebe, günlük raporlar ve denetim kayıtları",
+        "Frontend ve backend arasında paylaşılan Zod şemaları ve TypeScript tipleri",
+        "Kimlik doğrulama, yetkilendirme, doğrulama ve denetim kayıtları içeren güvenli API tasarımı",
+        "next-intl kullanan çok dilli Next.js arayüzü",
+      ],
+    },
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL",
+      "Zod",
+      "Docker",
+      "Tailwind CSS",
+      "next-intl",
+    ],
+    gitUrl: null,
+    previewUrl: "https://marine-system-web.vercel.app",
+    descriptions: {
+      en: "MPAIS is a production-style maritime port authority information system for managing vessel traffic, port officer workflows, shipping agent operations, VTS logs, pratique clearances, arrival notifications, vessel movements, violations, detentions, accounting records, reports, and audit trails. The system is built as a full-stack TypeScript monorepo with a secure Express API, Prisma/PostgreSQL data model, shared Zod validation, and a multilingual Next.js dashboard for agents, officers, and VTS operators.",
+      ar: "MPAIS هو نظام معلومات متكامل لهيئات الموانئ البحرية لإدارة حركة السفن وعمليات الميناء وسير عمل وكلاء الشحن وضباط الميناء ومشغلي VTS. يدعم النظام إشعارات الوصول، تسجيل السفن، شهادات البراتيك، حركة السفن، المخالفات، الاحتجاز، السجلات المحاسبية، التقارير، وسجلات التدقيق. تم بناؤه كتطبيق Full-Stack باستخدام TypeScript مع Next.js وExpress وPrisma وPostgreSQL وZod وواجهة متعددة اللغات.",
+      tr: "MPAIS, deniz limanı otoriteleri için geliştirilen kapsamlı bir bilgi yönetim sistemidir. Gemi trafiği, liman görevlisi süreçleri, acente işlemleri, VTS kayıtları, pratique izinleri, varış bildirimleri, gemi hareketleri, ihlaller, alıkoymalar, muhasebe kayıtları, raporlar ve denetim kayıtlarını yönetir. Sistem TypeScript tabanlı bir monorepo olarak Next.js, Express, Prisma, PostgreSQL, Zod ve çok dilli bir kullanıcı arayüzü ile geliştirilmiştir.",
+    },
+  },
 ];
 
 const buildProjects = (locale) =>
-  sharedProjects.map((project) => ({
-    ...project,
-    description: project.descriptions[locale],
-  }));
+  sharedProjects
+    .map((project) => ({
+      ...project,
+      description: project.descriptions[locale],
+      tagline: project.taglines?.[locale] ?? project.tagline,
+      role: project.roles?.[locale] ?? project.role,
+      highlights: project.highlightsByLocale?.[locale] ?? project.highlights,
+    }))
+    .sort(
+      (projectA, projectB) =>
+        Number(Boolean(projectB.featured)) -
+        Number(Boolean(projectA.featured)),
+    );
 
 const buildFilters = (locale) =>
   projectFilters.map((filter) => ({
