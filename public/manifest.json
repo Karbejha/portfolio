@@ -8,9 +8,19 @@
   "theme_color": "#121212",
   "icons": [
     {
-      "src": "/images/icon.ico",
+      "src": "/images/favicon-48x48.png",
       "sizes": "48x48",
-      "type": "image/x-icon"
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "orientation": "portrait-primary",

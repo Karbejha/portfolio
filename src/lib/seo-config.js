@@ -186,6 +186,16 @@ export const getLocalizedMetadata = (locale = defaultLocale) => {
       },
     },
     category: "technology",
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+        { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      ],
+      apple: [
+        { url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+    },
   };
 };
 
@@ -207,6 +217,7 @@ export const getStructuredData = (locale = defaultLocale) => {
         description: dictionary.seo.personDescription,
         url: pageUrl,
         image: `${siteConfig.url}/images/hero-image.png`,
+        logo: `${siteConfig.url}/images/logo.png`,
         sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
         knowsAbout: siteConfig.skills,
         knowsLanguage: siteConfig.languages.map((language) => ({

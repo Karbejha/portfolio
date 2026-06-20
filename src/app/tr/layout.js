@@ -38,8 +38,10 @@ export default function TurkishRootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href="/icon.ico" sizes="any" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" type="image/x-icon" />
+        <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#121212" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
