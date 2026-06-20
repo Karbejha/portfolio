@@ -46,10 +46,10 @@ const Navbar = ({ locale, nav, direction }) => {
             src="/images/logo.png"
             alt="Mohamad Karbejha logo"
             priority
-            className="w-24 sm:w-28 md:w-36 lg:w-40"
-            width={150}
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain"
+            width={200}
             height={150}
-            sizes="(min-width: 1024px) 160px, (min-width: 768px) 144px, 112px"
+            sizes="(min-width: 1024px) 200px, (min-width: 768px) 180px, 140px"
           />
         </Link>
 

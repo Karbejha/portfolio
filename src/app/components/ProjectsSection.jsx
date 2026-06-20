@@ -69,6 +69,7 @@ const ProjectsSection = ({ content }) => {
               youtubeUrl={project.youtubeUrl}
               techStack={project.techStack}
               gitUrl={project.gitUrl}
+              hideGitHubButton={project.hideGitHubButton}
               previewUrl={project.previewUrl}
               labels={content.cards}
               priority={index < 2}

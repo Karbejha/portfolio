@@ -113,7 +113,9 @@ const sharedProjects = [
       "BIM/IFC",
     ],
     gitUrl: null,
+    hideGitHubButton: true,
     previewUrl: "https://immorise.com",
+    youtubeUrl: "https://www.youtube.com/watch?v=3NF2b19d_y4",
     descriptions: {
       en: "Immorise is a German PropTech SaaS platform that automates real estate management through AI-driven 3D Digital Twins. It digitizes physical properties from 3D scans or floor plans, turns them into interactive BIM-compliant digital twins, and hosts them in a cloud 4D collaboration hub for owners, investors, asset managers, and facility teams.",
       ar: "Immorise is a German PropTech SaaS platform that automates real estate management through AI-driven 3D Digital Twins. It digitizes physical properties from 3D scans or floor plans, turns them into interactive BIM-compliant digital twins, and hosts them in a cloud 4D collaboration hub for owners, investors, asset managers, and facility teams.",
@@ -253,6 +255,7 @@ const sharedProjects = [
       "Mobile",
     ],
     gitUrl: null,
+    hideGitHubButton: true,
     previewUrl: "https://acilimsoft.com/saha-ekip-yonetimi/",
     descriptions: {
       en: "Three-S is an enterprise field team management and merchandising platform by Açılımsoft that enables companies to plan, monitor, measure, and manage field operations in real time. The platform collects critical data about own and competitor products from retail points, provides route management, POP tracking, shelf compliance monitoring, competitive price analysis, and detailed reporting — serving 5,000+ active users across FMCG and retail sectors.",
@@ -397,11 +400,11 @@ const sharedProjects = [
     id: 17,
     featured: true,
     title: "Maritime Ports Authority Information System (MPAIS)",
-    image: "/images/projects/mpais/1-login.png",
+    image: "/images/projects/mpais/3-weather.png",
     images: [
+      "/images/projects/mpais/3-weather.png",
       "/images/projects/mpais/1-login.png",
       "/images/projects/mpais/2-reports.png",
-      "/images/projects/mpais/3-weather.png",
       "/images/projects/mpais/4-live-map.png",
       "/images/projects/mpais/5-request-review.png",
       "/images/projects/mpais/6-request-print.png",

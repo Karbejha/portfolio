@@ -13,10 +13,10 @@ const Footer = ({ locale, content }) => {
               <Image
                 src="/images/logo.png"
                 alt="Mohamad Karbejha logo"
-                width={150}
-                height={50}
-                className="w-auto h-auto object-contain"
-                sizes="150px"
+                width={200}
+                height={150}
+                className="h-10 w-auto object-contain"
+                sizes="200px"
               />
             </Link>
             <span className="text-slate-500 text-sm">

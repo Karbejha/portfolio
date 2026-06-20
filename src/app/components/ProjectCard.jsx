@@ -44,6 +44,7 @@ const ProjectCard = ({
   highlights = [],
   techStack = [],
   gitUrl,
+  hideGitHubButton = false,
   previewUrl,
   labels,
   priority = false,
@@ -199,7 +200,7 @@ const ProjectCard = ({
           ))}
         </div>
 
-        <div className="mt-auto flex flex-nowrap gap-2 pt-6 overflow-x-auto no-scrollbar">
+        <div className="mt-auto flex flex-wrap gap-2 pt-6">
           {hasGitUrl ? (
             <Link
               href={gitUrl}
@@ -210,7 +211,7 @@ const ProjectCard = ({
               <CodeBracketIcon className="h-3.5 w-3.5 md:h-4 md:w-4" />
               {labels.github}
             </Link>
-          ) : (
+          ) : !hideGitHubButton ? (
             <span
               aria-disabled="true"
               className="inline-flex items-center gap-1.5 rounded-full border border-[#ADB7BE] px-3 py-1.5 text-xs md:text-sm text-[#ADB7BE] opacity-50 shrink-0 whitespace-nowrap"
@@ -218,7 +219,7 @@ const ProjectCard = ({
               <CodeBracketIcon className="h-3.5 w-3.5 md:h-4 md:w-4" />
               {labels.github}
             </span>
-          )}
+          ) : null}
           {hasPreviewUrl && (
             <Link
               href={previewUrl}
