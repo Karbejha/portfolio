@@ -85,7 +85,10 @@ const projectFilters = [
   { id: "All", labels: { en: "All", ar: "الكل", tr: "Hepsi" } },
   { id: "Web", labels: { en: "Web", ar: "ويب", tr: "Web" } },
   { id: "Mobile", labels: { en: "Mobile", ar: "جوال", tr: "Mobil" } },
-  { id: "Desktop", labels: { en: "Desktop", ar: "سطح المكتب", tr: "Masaüstü" } },
+  {
+    id: "Desktop",
+    labels: { en: "Desktop", ar: "سطح المكتب", tr: "Masaüstü" },
+  },
 ];
 
 const sharedProjects = [
@@ -320,7 +323,7 @@ const sharedProjects = [
     ],
     techStack: ["Next.js", "Express.js", "MongoDB", "TypeScript"],
     gitUrl: "https://github.com/Karbejha/FlowHR",
-    previewUrl: "https://flowhr.karbejha.site",
+    previewUrl: "https://flowhr.karbejha.me",
     descriptions: {
       en: "FlowHR is an enterprise-grade HR management platform that streamlines organization workflow, time tracking, leaf approvals, and analytics. Built using Next.js and TypeScript, the system integrates a comprehensive employee database, secure role-based access control, and real-time dashboard analytics, reducing administrative HR overhead by up to 60%.",
       ar: "FlowHR هو نظام متكامل لإدارة الموارد البشرية يبسط سير عمل المؤسسة، وتتبع الوقت، والموافقة على الإجازات، والتحليلات. تم بناء النظام باستخدام Next.js وTypeScript، وهو يدمj قاعدة بيانات شاملة للموظفين، وتحكمًا آمنًا في الوصول على أساس الأدوار، وتحليلات فورية للوحة التحكم، مما يقلل من العبء الإداري للموارد البشرية بنسبة تصل إلى 60٪.",
@@ -502,8 +505,7 @@ const buildProjects = (locale) =>
     }))
     .sort(
       (projectA, projectB) =>
-        Number(Boolean(projectB.featured)) -
-        Number(Boolean(projectA.featured)),
+        Number(Boolean(projectB.featured)) - Number(Boolean(projectA.featured)),
     );
 
 const buildFilters = (locale) =>
@@ -850,8 +852,10 @@ export const dictionaries = {
       ariaLabel: "Giriş bölümü",
       greeting: "Merhaba, Ben Mohamad Karbejha",
       role: "Full Stack Geliştirici - 6+ Yıllık Deneyim",
-      intro: "Veri tabanından kullanıcı arayüzüne kadar hızlı ve ölçeklenebilir web uygulamaları geliştiriyorum.",
-      stack: "Ana teknoloji yığını: Next.js, TypeScript, Node.js, PostgreSQL, Express.",
+      intro:
+        "Veri tabanından kullanıcı arayüzüne kadar hızlı ve ölçeklenebilir web uygulamaları geliştiriyorum.",
+      stack:
+        "Ana teknoloji yığını: Next.js, TypeScript, Node.js, PostgreSQL, Express.",
       skillsLabel: "Önemli beceriler",
       keySkills: [
         "Next.js",
@@ -866,7 +870,8 @@ export const dictionaries = {
       hireMeLabel: "İş fırsatları için Mohamad Karbejha ile iletişime geçin",
       cv: "Özgeçmişi Görüntüle",
       cvLabel: "Mohamad Karbejha'nın özgeçmişini görüntüleyin",
-      imageAlt: "Mohamad Karbejha - Full Stack Geliştirici ve Yazılım Mühendisi",
+      imageAlt:
+        "Mohamad Karbejha - Full Stack Geliştirici ve Yazılım Mühendisi",
     },
     achievements: {
       ariaLabel: "Kariyer başarıları",
@@ -895,7 +900,10 @@ export const dictionaries = {
               label: "Ön Yüz (Frontend)",
               value: "Next.js, React, TypeScript, JavaScript, HTML/CSS",
             },
-            { label: "Arka Yüz (Backend)", value: "Node.js, Express.js, Python, Django" },
+            {
+              label: "Arka Yüz (Backend)",
+              value: "Node.js, Express.js, Python, Django",
+            },
             { label: "Veri Tabanı", value: "PostgreSQL, MongoDB, MySQL" },
             { label: "DevOps", value: "Docker, CI/CD, Git" },
             { label: "Diğer", value: "REST API'ler, WebSocket, Socket.IO" },
@@ -963,12 +971,12 @@ export const dictionaries = {
     },
     loading: {
       title: "Yükleniyor...",
-      description: "Mohamad Karbejha'nın portfolyosu yüklenirken lütfen bekleyin",
+      description:
+        "Mohamad Karbejha'nın portfolyosu yüklenirken lütfen bekleyin",
     },
     notFound: {
       title: "Sayfa Bulunamadı",
-      description:
-        "Aradığınız sayfa mevcut değil veya taşınmış.",
+      description: "Aradığınız sayfa mevcut değil veya taşınmış.",
       home: "Ana Sayfaya Git",
       projects: "Projeleri Görüntüle",
       metadataTitle: "Sayfa Bulunamadı - Mohamad Karbejha",

@@ -5,19 +5,23 @@
 Your portfolio website has been significantly enhanced with comprehensive SEO improvements that will help it rank higher in search engine results. Here's what has been implemented:
 
 ### 1. 📊 Enhanced Metadata & Schema
+
 - **Comprehensive meta tags** with targeted keywords
 - **Structured data (JSON-LD)** for better search engine understanding
 - **Open Graph and Twitter Card** optimization for social sharing
 - **Canonical URLs** to prevent duplicate content issues
 
 ### 2. 🗺️ Site Structure & Navigation
+
 - **XML Sitemap** (`/sitemap.xml`) automatically generated
 - **Robots.txt** with proper crawling instructions
 - **404 error page** with navigation options
 - **Loading states** for better user experience
 
 ### 3. 🎯 Keyword Optimization
+
 **Primary Target Keywords:**
+
 - Mohamad Karbejha
 - Full Stack Developer
 - C# ASP.NET Core Developer
@@ -27,12 +31,14 @@ Your portfolio website has been significantly enhanced with comprehensive SEO im
 - Web Developer Istanbul
 
 **Content optimized for:**
+
 - Local SEO (Istanbul, Turkey)
 - Technical skills (C#, ASP.NET Core, React, Next.js, Python)
 - Professional qualifications (Computer Engineering, Certifications)
 - Multilingual capabilities (English, Turkish, Arabic)
 
 ### 4. ⚡ Performance Optimization
+
 - **Image optimization** with Next.js Image component
 - **Lazy loading** for images
 - **Code splitting** and optimization
@@ -40,6 +46,7 @@ Your portfolio website has been significantly enhanced with comprehensive SEO im
 - **Security headers** implementation
 
 ### 5. 🔧 Technical SEO
+
 - **Mobile-first responsive design**
 - **Core Web Vitals** optimization
 - **Accessibility improvements** (ARIA labels, semantic HTML)
@@ -48,18 +55,21 @@ Your portfolio website has been significantly enhanced with comprehensive SEO im
 ## 🎯 Expected SEO Results
 
 ### Short-term (1-3 months):
+
 - ✅ Better search engine crawling and indexing
 - ✅ Improved social media sharing appearance
 - ✅ Enhanced user experience and engagement
 - ✅ Faster page load times
 
 ### Medium-term (3-6 months):
+
 - 📈 Increased organic traffic
 - 📈 Better keyword rankings for target terms
 - 📈 Improved click-through rates from search results
 - 📈 Enhanced online visibility
 
 ### Long-term (6+ months):
+
 - 🎯 Top-page rankings for target keywords
 - 🎯 Established domain authority
 - 🎯 Consistent professional inquiries
@@ -68,6 +78,7 @@ Your portfolio website has been significantly enhanced with comprehensive SEO im
 ## 📱 Next Steps for Maximum SEO Impact
 
 ### 1. Immediate Actions (Do This Week):
+
 ```bash
 # Build and test the optimized site
 npm run build
@@ -79,23 +90,27 @@ npm run start
 ```
 
 ### 2. Google Search Console Setup:
+
 1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add your domain property: `karbejha.site`
+2. Add your domain property: `karbejha.me`
 3. Verify ownership using the meta tag in your layout.js
-4. Submit your sitemap: `https://karbejha.site/sitemap.xml`
+4. Submit your sitemap: `https://karbejha.me/sitemap.xml`
 
 ### 3. Google Analytics Setup:
+
 1. Create a Google Analytics 4 property
 2. Add the tracking code to your layout.js
 3. Set up conversion tracking for contact form submissions
 
 ### 4. Social Media Optimization:
+
 - Update LinkedIn profile with portfolio link
 - Update GitHub profile README with portfolio link
 - Share portfolio on professional networks
 - Create social media posts about your projects
 
 ### 5. Content Strategy:
+
 - Add detailed project case studies
 - Create technical blog posts
 - Update portfolio regularly with new projects
@@ -104,12 +119,14 @@ npm run start
 ## 🔍 SEO Monitoring Tools
 
 ### Free Tools:
+
 - **Google Search Console** - Search performance monitoring
 - **Google Analytics** - Traffic and user behavior analysis
 - **Google PageSpeed Insights** - Performance monitoring
 - **GTmetrix** - Site speed analysis
 
 ### Premium Tools (Optional):
+
 - **Ahrefs** - Comprehensive SEO analysis
 - **SEMrush** - Keyword research and tracking
 - **Screaming Frog** - Technical SEO audit
@@ -117,22 +134,26 @@ npm run start
 ## 🚨 Important Notes
 
 ### Domain and Hosting:
-- Your domain: `https://karbejha.site` ✅
+
+- Your domain: `https://karbejha.me` ✅
 - Ensure SSL certificate is installed
 - Use a reliable hosting provider (Vercel, Netlify, etc.)
 
 ### Regular Maintenance:
+
 - Update content monthly
 - Monitor search rankings weekly
 - Run SEO audits quarterly
 - Keep dependencies updated
 
 ### Security Vulnerabilities:
+
 Some npm packages have security warnings. These are mainly from development dependencies and don't affect the production site. Consider updating them regularly.
 
 ## 📊 SEO Checklist
 
 ### ✅ Completed:
+
 - [x] Enhanced meta tags and titles
 - [x] Structured data implementation
 - [x] XML sitemap generation
@@ -147,6 +168,7 @@ Some npm packages have security warnings. These are mainly from development depe
 - [x] Social media optimization
 
 ### 📋 To Do:
+
 - [ ] Deploy to production
 - [ ] Set up Google Search Console
 - [ ] Configure Google Analytics

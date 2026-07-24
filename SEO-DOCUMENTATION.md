@@ -1,11 +1,13 @@
 # SEO Enhancement Documentation
 
 ## Overview
+
 This document outlines the comprehensive SEO improvements implemented for Mohamad Karbejha's portfolio website to improve search engine visibility and ranking.
 
 ## SEO Improvements Implemented
 
 ### 1. Meta Tags & Metadata
+
 - **Enhanced Title Tags**: Added descriptive, keyword-rich titles with proper hierarchy
 - **Meta Descriptions**: Compelling descriptions with target keywords
 - **Open Graph Tags**: Social media optimization for better sharing
@@ -14,6 +16,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - **Robots Meta**: Proper indexing instructions
 
 ### 2. Structured Data (Schema.org)
+
 - **Person Schema**: Professional information structured for search engines
 - **WebSite Schema**: Website information and search functionality
 - **CreativeWork Schema**: Portfolio and project information
@@ -21,6 +24,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - **Breadcrumb Schema**: Navigation structure
 
 ### 3. Technical SEO
+
 - **XML Sitemap**: Automatic generation with proper priorities
 - **Robots.txt**: Proper crawling instructions
 - **404 Page**: Custom error page with navigation
@@ -29,6 +33,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - **Mobile Optimization**: Responsive design with proper viewport
 
 ### 4. Content Optimization
+
 - **Keyword Integration**: Natural integration of target keywords
 - **Header Structure**: Proper H1, H2, H3 hierarchy
 - **Internal Linking**: Strategic link placement
@@ -36,6 +41,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - **Semantic HTML**: Proper use of HTML5 semantic elements
 
 ### 5. Performance Optimization
+
 - **Image Optimization**: Next.js Image component with optimization
 - **Code Splitting**: Automatic code splitting with Next.js
 - **Compression**: Gzip compression enabled
@@ -43,6 +49,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - **CDN Ready**: Optimized for content delivery networks
 
 ### 6. Security & Best Practices
+
 - **HTTPS Enforcement**: SSL certificate requirements
 - **Security Headers**: X-Frame-Options, CSP, etc.
 - **CSRF Protection**: Cross-site request forgery prevention
@@ -51,6 +58,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 ## Target Keywords
 
 ### Primary Keywords
+
 - Mohamad Karbejha
 - Full Stack Developer
 - C# Developer
@@ -59,6 +67,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - Next.js Developer
 
 ### Secondary Keywords
+
 - Software Engineer Turkey
 - Web Developer Istanbul
 - Python Developer
@@ -74,6 +83,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - Fullstack Developer
 
 ### Long-tail Keywords
+
 - Full Stack Developer specializing in C# ASP.NET Core
 - Experienced React Next.js developer Turkey
 - Computer Engineering graduate web developer
@@ -84,12 +94,14 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - Full stack web developer Doğuş University
 
 ## Local SEO Optimization
+
 - **Location**: Istanbul, Turkey
 - **Geographic Tags**: Proper geo-location meta tags
 - **Local Business Schema**: Professional location information
 - **Language Support**: Multilingual capabilities (English, Turkish, Arabic)
 
 ## Social Media Integration
+
 - **Open Graph**: Facebook and LinkedIn sharing optimization
 - **Twitter Cards**: Twitter sharing enhancement
 - **Schema Markup**: Social media profile links
@@ -98,18 +110,21 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 ## Content Strategy Recommendations
 
 ### 1. Blog Section (Future Enhancement)
+
 - Technical tutorials and guides
 - Industry insights and trends
 - Project case studies
 - Technology comparisons
 
 ### 2. Portfolio Expansion
+
 - Detailed project descriptions
 - Technology stack explanations
 - Problem-solving approaches
 - Results and impact metrics
 
 ### 3. Testimonials Section
+
 - Client testimonials
 - Colleague recommendations
 - Project feedback
@@ -118,6 +133,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 ## Monitoring & Analytics
 
 ### Recommended Tools
+
 1. **Google Search Console**
    - Monitor search performance
    - Track indexing issues
@@ -141,6 +157,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 ## Implementation Checklist
 
 ### ✅ Completed
+
 - [x] Enhanced meta tags and titles
 - [x] Structured data implementation
 - [x] XML sitemap generation
@@ -155,6 +172,7 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 - [x] Performance optimization
 
 ### 📋 Next Steps
+
 - [ ] Google Search Console setup
 - [ ] Google Analytics implementation
 - [ ] Social media profile verification
@@ -166,17 +184,20 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 ## Maintenance Schedule
 
 ### Weekly
+
 - Monitor search rankings
 - Check for broken links
 - Review site performance
 
 ### Monthly
+
 - Update content with fresh information
 - Review and optimize meta descriptions
 - Analyze search console data
 - Update project portfolio
 
 ### Quarterly
+
 - Comprehensive SEO audit
 - Competitor analysis
 - Technical SEO review
@@ -185,26 +206,31 @@ This document outlines the comprehensive SEO improvements implemented for Mohama
 ## Expected Results Timeline
 
 ### Short-term (1-3 months)
+
 - Improved search engine indexing
 - Better social media sharing
 - Enhanced user experience
 - Faster page load times
 
 ### Medium-term (3-6 months)
+
 - Increased organic traffic
 - Better keyword rankings
 - Improved click-through rates
 - Enhanced brand visibility
 
 ### Long-term (6+ months)
+
 - Established domain authority
 - Consistent top-page rankings
 - Increased professional inquiries
 - Strong online presence
 
 ## Contact Information
+
 For questions about this SEO implementation, please contact:
+
 - **Name**: Mohamad Karbejha
-- **Portfolio**: https://karbejha.site
+- **Portfolio**: https://karbejha.me
 - **LinkedIn**: https://www.linkedin.com/in/mohamad-karbejha
 - **GitHub**: https://github.com/Karbejha

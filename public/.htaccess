@@ -49,7 +49,7 @@
     
     # Force www or non-www (choose one)
     RewriteCond %{HTTP_HOST} ^www\.karbejha\.site [NC]
-    RewriteRule ^(.*)$ https://karbejha.site/$1 [L,R=301]
+    RewriteRule ^(.*)$ https://karbejha.me/$1 [L,R=301]
 </IfModule>
 
 # Remove trailing slash for better SEO

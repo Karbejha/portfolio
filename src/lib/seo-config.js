@@ -11,7 +11,7 @@ export const siteConfig = {
     "Mohamad Karbejha - Full Stack Developer | Next.js, TypeScript, Node.js",
   description:
     "Full Stack Developer with 6+ years of experience building scalable web applications. Core stack: Next.js, TypeScript, Node.js, Express.js, PostgreSQL. Based in Istanbul, Turkey - open to remote and relocation.",
-  url: "https://karbejha.site",
+  url: "https://karbejha.me",
   ogImage: "/images/hero-image.png",
   links: {
     github: "https://github.com/Karbejha",
@@ -41,9 +41,9 @@ export const siteConfig = {
   ],
   author: {
     name: "Mohamad Karbejha",
-    email: "info@karbejha.site",
-    url: "https://karbejha.site",
-    image: "https://karbejha.site/images/hero-image.png",
+    email: "info@karbejha.me",
+    url: "https://karbejha.me",
+    image: "https://karbejha.me/images/hero-image.png",
   },
   location: {
     city: "Istanbul",
@@ -128,16 +128,16 @@ export const getLocalizedMetadata = (locale = defaultLocale) => {
             "مطور Node.js",
           ]
         : locale === "tr"
-        ? [
-            ...siteConfig.keywords,
-            "Mohamad Karbejha",
-            "Full Stack Geliştirici",
-            "Next.js Geliştirici",
-            "TypeScript Geliştirici",
-            "Yazılım Mühendisi İstanbul",
-            "Bilgisayar Mühendisi",
-          ]
-        : siteConfig.keywords,
+          ? [
+              ...siteConfig.keywords,
+              "Mohamad Karbejha",
+              "Full Stack Geliştirici",
+              "Next.js Geliştirici",
+              "TypeScript Geliştirici",
+              "Yazılım Mühendisi İstanbul",
+              "Bilgisayar Mühendisi",
+            ]
+          : siteConfig.keywords,
     authors: [{ name: siteConfig.author.name }],
     creator: siteConfig.author.name,
     publisher: siteConfig.author.name,
@@ -193,7 +193,11 @@ export const getLocalizedMetadata = (locale = defaultLocale) => {
         { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       ],
       apple: [
-        { url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+        {
+          url: "/images/apple-touch-icon.png",
+          sizes: "180x180",
+          type: "image/png",
+        },
       ],
     },
   };
