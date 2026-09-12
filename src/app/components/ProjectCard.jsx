@@ -35,6 +35,7 @@ const getYouTubeEmbedUrl = (url) => {
 const ProjectCard = ({
   projectId,
   imgUrl,
+  imageBackground = "dark",
   images,
   youtubeUrl,
   title,
@@ -91,7 +92,11 @@ const ProjectCard = ({
 
   return (
     <article className="flex h-full flex-col">
-      <div className="h-52 md:h-72 rounded-t-xl relative group bg-[#181818] overflow-hidden">
+      <div
+        className={`h-52 md:h-72 rounded-t-xl relative group overflow-hidden ${
+          imageBackground === "light" ? "bg-white" : "bg-[#181818]"
+        }`}
+      >
         {hasCarousel ? (
           <ImageCarousel
             images={images}

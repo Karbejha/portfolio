@@ -89,13 +89,18 @@ const projectFilters = [
     id: "Desktop",
     labels: { en: "Desktop", ar: "سطح المكتب", tr: "Masaüstü" },
   },
+  {
+    id: "Engineering",
+    labels: { en: "Engineering", ar: "هندسة", tr: "Mühendislik" },
+  },
 ];
 
 const sharedProjects = [
   {
     id: 11,
     title: "Immorise",
-    image: "https://immorise.com/wp-content/uploads/2024/09/screenshot.jpg",
+    image: "https://immorise.com/assets/logo-horizontal-light.svg",
+    imageBackground: "light",
     tag: ["All", "Web"],
     tagline:
       "AI-powered Digital Twin & Lifecycle Management Platform for Real Estate",
@@ -365,10 +370,9 @@ const sharedProjects = [
   {
     id: 3,
     title: "Misas - Sanal Market",
-    image:
-      "https://misas.com.tr/wp-content/uploads/2025/09/misas-logo-web-color.svg",
+    image: "/images/projects/misas/logo.png",
     images: [
-      "https://misas.com.tr/wp-content/uploads/2025/09/misas-logo-web-color.svg",
+      "/images/projects/misas/logo.png",
       "/images/projects/misas/1-manav.png",
       "/images/projects/3.png",
     ],
@@ -490,6 +494,90 @@ const sharedProjects = [
       en: "MPAIS is a production-style maritime port authority information system for managing vessel traffic, port officer workflows, shipping agent operations, VTS logs, pratique clearances, arrival notifications, vessel movements, violations, detentions, accounting records, reports, and audit trails. The system is built as a full-stack TypeScript monorepo with a secure Express API, Prisma/PostgreSQL data model, shared Zod validation, and a multilingual Next.js dashboard for agents, officers, and VTS operators.",
       ar: "MPAIS هو نظام معلومات متكامل لهيئات الموانئ البحرية لإدارة حركة السفن وعمليات الميناء وسير عمل وكلاء الشحن وضباط الميناء ومشغلي VTS. يدعم النظام إشعارات الوصول، تسجيل السفن، شهادات البراتيك، حركة السفن، المخالفات، الاحتجاز، السجلات المحاسبية، التقارير، وسجلات التدقيق. تم بناؤه كتطبيق Full-Stack باستخدام TypeScript مع Next.js وExpress وPrisma وPostgreSQL وZod وواجهة متعددة اللغات.",
       tr: "MPAIS, deniz limanı otoriteleri için geliştirilen kapsamlı bir bilgi yönetim sistemidir. Gemi trafiği, liman görevlisi süreçleri, acente işlemleri, VTS kayıtları, pratique izinleri, varış bildirimleri, gemi hareketleri, ihlaller, alıkoymalar, muhasebe kayıtları, raporlar ve denetim kayıtlarını yönetir. Sistem TypeScript tabanlı bir monorepo olarak Next.js, Express, Prisma, PostgreSQL, Zod ve çok dilli bir kullanıcı arayüzü ile geliştirilmiştir.",
+    },
+  },
+  {
+    id: 18,
+    featured: true,
+    title: "EA400 Hydrographic Data Processor & Bathymetric Modeler",
+    image: "/images/projects/ea400/1-overview.png",
+    images: [
+      "/images/projects/ea400/1-overview.png",
+      "/images/projects/ea400/2-map-view.png",
+    ],
+    tag: ["All", "Web", "Engineering"],
+    tagline: "High-Performance Hydrographic Data Processing, Temporal GPS Interpolation & Seafloor Bathymetry Modeling Platform",
+    taglines: {
+      en: "High-Performance Hydrographic Data Processing, Temporal GPS Interpolation & Seafloor Bathymetry Modeling Platform",
+      ar: "منصة متطورة لمعالجة البيانات الهيدروغرافية والمزامنة الزمنية ونمذجة تضاريس قاع البحر",
+      tr: "Yüksek Başarımlı Hidrografik Veri İşleme, Zamansal GPS İnterpolasyonu ve Batimetrik Taban Modelleme Platformu",
+    },
+    role: "Lead Full-Stack & Systems Engineer responsible for low-level binary parser algorithms, microsecond temporal GPS synchronization, metric geodetic transformations (UTM), bathymetric surface interpolation engines (TIN/IDW), and local WebGL bathymetry visualization.",
+    roles: {
+      en: "Lead Full-Stack & Systems Engineer responsible for low-level binary parser algorithms, microsecond temporal GPS synchronization, metric geodetic transformations (UTM), bathymetric surface interpolation engines (TIN/IDW), and local WebGL bathymetry visualization.",
+      ar: "مهندس برمجيات ونظم متكاملة مسؤول عن تطوير خوارزميات فك تشفير الملفات الثنائية، المزامنة الزمنية الدقيقة، التحويل الجيوديسي المتري (UTM)، نمذجة أسطح الأعماق (TIN/IDW)، وعارض الخرائط التفاعلي.",
+      tr: "Düşük seviyeli ikili ayrıştırıcı algoritmaları, mikrosaniye zamansal GPS senkronizasyonu, metrik jeodezik dönüşümler (UTM), batimetrik yüzey enterpolasyon motorları (TIN/IDW) ve yerel WebGL haritalamasından sorumlu Sistem ve Full-Stack Mühendisi.",
+    },
+    highlights: [
+      "Streaming binary parser decoding Kongsberg EA400 datagrams (CON0, NME0, DEP0) with minimal memory footprint",
+      "Microsecond-level temporal synchronization and binary-search linear interpolation of NMEA navigation fixes",
+      "Loss-of-lock detection converting unacquired bottom pings (0.0m) to clean null values for engineering safety",
+      "High-precision geodetic transformation engine projecting WGS 84 lat/lon to planar metric UTM Zone 36N (EPSG:32636)",
+      "Seafloor bathymetric gridding via Constrained Delaunay TIN & IDW with large-triangle pruning to prevent seabed hallucination",
+      "Automated derivation of depth contours (GeoJSON) and 32-bit floating-point GeoTIFF rasters with embedded hydrographic metadata",
+      "Dynamic Web Mercator raster tile streaming on the fly via rio-tiler without third-party GIS map servers",
+      "100% air-gapped, offline-ready containerized architecture tailored for offshore survey vessels with zero cloud reliance",
+    ],
+    highlightsByLocale: {
+      en: [
+        "Streaming binary parser decoding Kongsberg EA400 datagrams (CON0, NME0, DEP0) with minimal memory footprint",
+        "Microsecond-level temporal synchronization and binary-search linear interpolation of NMEA navigation fixes",
+        "Loss-of-lock detection converting unacquired bottom pings (0.0m) to clean null values for engineering safety",
+        "High-precision geodetic transformation engine projecting WGS 84 lat/lon to planar metric UTM Zone 36N (EPSG:32636)",
+        "Seafloor bathymetric gridding via Constrained Delaunay TIN & IDW with large-triangle pruning to prevent seabed hallucination",
+        "Automated derivation of depth contours (GeoJSON) and 32-bit floating-point GeoTIFF rasters with embedded hydrographic metadata",
+        "Dynamic Web Mercator raster tile streaming on the fly via rio-tiler without third-party GIS map servers",
+        "100% air-gapped, offline-ready containerized architecture tailored for offshore survey vessels with zero cloud reliance",
+      ],
+      ar: [
+        "فك تشفير تدفق البيانات الثنائية لأجهزة Kongsberg EA400 (CON0, NME0, DEP0) بأقل استهلاك ممكن للذاكرة",
+        "مزامنة زمنية فائقة الدقة بالميكروثانية واستيفاء خطي لمواقع NMEA باستخدام البحث الثنائي",
+        "معالجة ذكية لحالات فقدان ارتداد الإشارة (0.0 م) وتحويلها إلى حقول فارغة لحماية الحسابات الهندسية",
+        "محرك تحويل جيوديسي عالي الدقة لإسقاط الإحداثيات إلى النظام المتري WGS 84 / UTM Zone 36N",
+        "توليد أسطح تضاريس قاع البحر عبر Delaunay TIN و IDW مع ميزة حماية الفجوات غير الممسوحة من التنبؤ الوهمي",
+        "اشتقاق خطوط الأعماق الكنتورية (GeoJSON) ونماذج الارتفاعات الرقمية بصيغة 32-bit Float GeoTIFF",
+        "بث ديناميكي لبلاطات الخرائط على الخادم المحلي باستخدام rio-tiler دون الحاجة لخوادم GIS وسيطة",
+        "معمارية معزولة بالكامل (Air-Gapped) وتعمل دون اتصال بالإنترنت مناسبة لبيئات السفن في عرض البحر",
+      ],
+      tr: [
+        "Kongsberg EA400 datagramlarını (CON0, NME0, DEP0) minimum bellek kullanımıyla çözen akış ikili ayrıştırıcısı",
+        "Mikrosaniye hassasiyetinde zamansal senkronizasyon ve ikili arama ile NMEA seyir düzeltmelerinin doğrusal enterpolasyonu",
+        "Mühendislik güvenliği için kilit kaybı tespit edilerek okunamayan dip derinliklerinin (0.0m) temiz null değerlere dönüştürülmesi",
+        "WGS 84 coğrafi koordinatlarını düzlemsel metrik UTM Zone 36N (EPSG:32636) sistemine dönüştüren yüksek hassasiyetli jeodezik motor",
+        "Haritalanmamış alanlarda yapay taban tahminini önlemek amacıyla büyük üçgen budamalı Kısıtlı Delaunay TIN ve IDW ile taban ızgaralaması",
+        "Gömülü hidrografik üstveriler içeren derinlik eşyükselti eğrileri (GeoJSON) ve 32-bit Float GeoTIFF rasterlarının otomatik üretimi",
+        "Üçüncü taraf GIS harita sunucularına ihtiyaç duymadan rio-tiler ile anlık dinamik Web Mercator karo akışı",
+        "Açık deniz araştırma gemileri için özel olarak tasarlanmış, sıfır bulut bağımlılığına sahip %100 çevrimdışı ve yalıtılmış (air-gapped) mimari",
+      ],
+    },
+    techStack: [
+      "Python",
+      "FastAPI",
+      "NumPy",
+      "SciPy",
+      "RasterIO",
+      "pyproj",
+      "ContourPy",
+      "rio-tiler",
+      "MapLibre GL",
+      "Docker",
+    ],
+    gitUrl: "https://github.com/Karbejha/kongsberg-ea400-converter",
+    previewUrl: null,
+    descriptions: {
+      en: "EA400 Converter is a specialized hydrographic data processing and bathymetric modeling platform designed for Kongsberg EA400 Single-Beam Echo Sounders. The application extracts raw dual-frequency soundings (38 kHz and 200 kHz) and NMEA navigation records from binary .out survey files, performs microsecond linear temporal interpolation, and projects coordinates to planar metric systems (UTM Zone 36N). It generates seafloor terrain surfaces using Constrained Delaunay TIN and IDW with gap-pruning safeguards, extracts derived depth contours, and exports production-grade deliverables (32-bit Float GeoTIFF, CAD NEZ matrices, XYZ point clouds, and GeoJSON tracks) alongside an interactive, air-gapped WebGL bathymetry inspector.",
+      ar: "EA400 Converter هو نظام برمجي وهندسي متخصص لمعالجة بيانات المسح الهيدروغرافي ونمذجة قاع البحر لأجهزة Kongsberg EA400 أحادية الحزمة. يستخرج النظام نبضات الأعماق للتردد المزدوج (38 و 200 كيلوهرتز) وبيانات الملاحة من الملفات الثنائية (.out)، ويجري مزامنة زمنية خطية بالميكروثانية مع تحويل الإحداثيات إلى النظام المتري (UTM Zone 36N). يقوم بتوليد أسطح تضاريس القاع عبر Delaunay TIN و IDW مع حماية الفجوات غير الممسوحة، واشتقاق خطوط الكنتور، وتصدير مخرجات جاهزة لبرامج CAD و GIS (مثل GeoTIFF 32-bit ومصفوفات NEZ وسحب نقاط XYZ) مدعومة بخريطة تفاعلية محلية بالكامل.",
+      tr: "EA400 Converter, Kongsberg EA400 Tek Hüzmeli İskandiller için geliştirilmiş özel bir hidrografik veri işleme ve batimetrik modelleme platformudur. İkili .out araştırma dosyalarından çift frekanslı (38 kHz ve 200 kHz) derinlik verilerini ve NMEA seyir kayıtlarını ayıklar, mikrosaniye doğrusal zamansal enterpolasyon gerçekleştirir ve koordinatları düzlemsel metrik sistemlere (UTM Zone 36N) dönüştürür. Kısıtlı Delaunay TIN ve IDW kullanarak taban topoğrafyası yüzeyleri oluşturur, derinlik eşyükselti eğrilerini çıkarır ve tamamen çevrimdışı çalışan etkileşimli bir WebGL haritası eşliğinde üretime hazır mühendislik çıktıları (32-bit Float GeoTIFF, CAD NEZ matrisleri, XYZ nokta bulutları) üretir.",
     },
   },
 ];
@@ -616,6 +704,8 @@ export const dictionaries = {
     projects: {
       heading: "My Projects",
       filtersLabel: "Filter projects by type",
+      resultsCount: "Showing {shown} of {total} projects",
+      showMoreProjects: "Show more projects",
       filters: buildFilters("en"),
       cards: {
         repositoryLabel: "View {title} GitHub repository",
@@ -771,6 +861,8 @@ export const dictionaries = {
     projects: {
       heading: "مشاريعي",
       filtersLabel: "تصفية المشاريع حسب النوع",
+      resultsCount: "عرض {shown} من أصل {total} مشروعًا",
+      showMoreProjects: "عرض المزيد من المشاريع",
       filters: buildFilters("ar"),
       cards: {
         repositoryLabel: "عرض مستودع {title} على GitHub",
@@ -930,6 +1022,8 @@ export const dictionaries = {
     projects: {
       heading: "Projelerim",
       filtersLabel: "Projeleri türüne göre filtrele",
+      resultsCount: "{total} projeden {shown} tanesi gösteriliyor",
+      showMoreProjects: "Daha fazla proje göster",
       filters: buildFilters("tr"),
       cards: {
         repositoryLabel: "{title} GitHub deposunu görüntüle",

@@ -24,7 +24,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'immorise.com',
-        pathname: '/wp-content/uploads/**',
+        pathname: '/assets/logo-horizontal-light.svg',
       },
       {
         protocol: 'https',
