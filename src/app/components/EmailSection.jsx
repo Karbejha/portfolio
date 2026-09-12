@@ -27,6 +27,13 @@ const EmailSection = ({ content }) => {
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {content.description}
         </p>
+        <Link
+          href={`mailto:${siteConfig.author.email}`}
+          className="mb-4 inline-flex text-sm text-primary-300 underline underline-offset-4 hover:text-white"
+          aria-label={content.emailLinkLabel}
+        >
+          {siteConfig.author.email}
+        </Link>
         <div className="socials flex flex-row gap-2">
           <Link
             href={siteConfig.links.github}
@@ -55,6 +62,20 @@ const EmailSection = ({ content }) => {
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label htmlFor="name" className="text-white block text-sm mb-2 font-medium">
+                {content.nameLabel}
+              </label>
+              <input
+                name="name"
+                type="text"
+                id="name"
+                required
+                autoComplete="name"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder={content.namePlaceholder}
+              />
+            </div>
             <div className="mb-6">
               <label htmlFor="email" className="text-white block mb-2 text-xl font-medium">
                 {content.emailLabel}

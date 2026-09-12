@@ -406,6 +406,7 @@ const sharedProjects = [
   {
     id: 17,
     featured: true,
+    slug: "mpais",
     title: "Maritime Ports Authority Information System (MPAIS)",
     image: "/images/projects/mpais/3-weather.png",
     images: [
@@ -499,6 +500,7 @@ const sharedProjects = [
   {
     id: 18,
     featured: true,
+    slug: "ea400",
     title: "EA400 Hydrographic Data Processor & Bathymetric Modeler",
     image: "/images/projects/ea400/1-overview.png",
     images: [
@@ -582,15 +584,318 @@ const sharedProjects = [
   },
 ];
 
+const projectTranslations = {
+  11: {
+    titles: { ar: "Immorise", tr: "Immorise" },
+    taglines: {
+      ar: "منصة التوأم الرقمي وإدارة دورة الحياة للعقارات المدعومة بالذكاء الاصطناعي",
+      tr: "Gayrimenkul için Yapay Zekâ Destekli Dijital İkiz ve Yaşam Döngüsü Yönetim Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن طبقة الويب لمنصة التوأم الرقمي وتكاملات API ولوحات التحكم ووحدات إدارة العقارات.",
+      tr: "Dijital İkiz Platformunun web katmanı, API entegrasyonları, panelleri ve mülk yönetimi modüllerinden sorumlu Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "نمذجة BIM آلية بالذكاء الاصطناعي من بيانات السحب النقطية والمسح",
+        "تعاون سحابي رباعي الأبعاد لإدارة الطاقة والمساحات",
+        "وحدات ESG والعناية الواجبة ومراقبة ثاني أكسيد الكربون وإدارة وصول أصحاب المصلحة",
+        "حساب المساحات وفق معايير DIN277 وGif وWoFlV",
+        "موثوق به ضمن برنامج NVIDIA AI Inception",
+      ],
+      tr: [
+        "Nokta bulutu ve tarama verilerinden yapay zekâ destekli otomatik BIM modelleme",
+        "Enerji ve alan yönetimi için 4D bulut iş birliği",
+        "ESG, durum tespiti, CO2 izleme ve paydaş erişim modülleri",
+        "DIN277, Gif ve WoFlV standartlarına göre alan hesaplamaları",
+        "NVIDIA AI Inception Programı tarafından güvenilen platform",
+      ],
+    },
+    descriptions: {
+      ar: "Immorise هي منصة SaaS ألمانية في مجال التقنية العقارية تعمل على أتمتة إدارة العقارات من خلال توائم رقمية ثلاثية الأبعاد مدعومة بالذكاء الاصطناعي. تعمل على رقمنة العقارات الفعلية انطلاقًا من عمليات المسح ثلاثي الأبعاد أو المخططات، وتحويلها إلى توائم رقمية تفاعلية متوافقة مع BIM، واستضافتها ضمن مركز تعاون سحابي رباعي الأبعاد للمالكين والمستثمرين ومديري الأصول وفرق المرافق.",
+    },
+  },
+  12: {
+    titles: { ar: "Diwan Group", tr: "Diwan Group" },
+    taglines: {
+      ar: "شبكة المحتوى الرائدة ومنصة تسويق المؤثرين في منطقة الشرق الأوسط وشمال أفريقيا",
+      tr: "MENA'nın Önde Gelen İçerik Ağı ve Influencer Pazarlama Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن هندسة البنية الأساسية للويب وعمليات الانضمام ومطابقة المبدعين مع العلامات التجارية وخلفية إدارة المحتوى.",
+      tr: "Temel web altyapısı, onboarding, içerik üreticisi-marka eşleştirme ve içerik yönetimi backend mimarisinden sorumlu Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "منصة متعددة الأدوار للمبدعين والعلامات التجارية ومنتجي الوسائط",
+        "تحليلات المبدعين ومحرك مطابقة شراكات العلامات التجارية",
+        "سير عمل لإدارة المحتوى وتحقيق الدخل من الأصول الإعلامية",
+        "بنية MCN متعددة اللغات لجمهور الشرق الأوسط وشمال أفريقيا",
+      ],
+      tr: [
+        "İçerik üreticileri, markalar ve medya yapımcıları için çok rollü platform",
+        "İçerik üreticisi analizleri ve marka ortaklığı eşleştirme motoru",
+        "İçerik yönetimi ve medya varlıklarından gelir elde etme iş akışları",
+        "MENA kitleleri için çok dilli MCN altyapısı",
+      ],
+    },
+    descriptions: {
+      ar: "Diwan Group، شركة إعلامية رقمية ومنصة شبكة متعددة القنوات، تخدم اقتصاد المبدعين في منطقة الشرق الأوسط وشمال أفريقيا. تجمع المنصة المبدعين والعلامات التجارية والمنتجين ضمن منظومة واحدة لنمو القنوات ومطابقة الشراكات وإدارة المحتوى وتحقيق الدخل من الأصول الإعلامية والتفاعل مع الجمهور على نطاق واسع.",
+    },
+  },
+  13: {
+    titles: { ar: "Bridge MENA", tr: "Bridge MENA" },
+    taglines: {
+      ar: "منصة متكاملة لدخول أسواق الشرق الأوسط وتأسيس الأعمال في الإمارات والسعودية",
+      tr: "BAE ve Suudi Arabistan için Tam Hizmet MENA Pazarına Giriş ve Şirket Kuruluşu Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن بناء بنية المنصة والموقع التسويقي وكتالوج الخدمات والتوجيه الديناميكي ومسار الاستشارات وحاسبة التكاليف.",
+      tr: "Platform mimarisi, pazarlama sitesi, hizmet kataloğu, dinamik yönlendirme, danışmanlık hunisi ve maliyet hesaplayıcısını geliştiren Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "كتالوج ديناميكي يضم أكثر من 30 خدمة لمسارات التوسع في الإمارات والسعودية",
+        "حاسبة تكلفة تأسيس الأعمال ومسار حجز الاستشارات",
+        "بنية SEO متعددة المناطق باستخدام App Router وSSR",
+        "رحلات مخصصة للشركات والمؤسسات الصغيرة والمتوسطة والشركات الناشئة",
+      ],
+      tr: [
+        "BAE ve Suudi Arabistan genişleme rotalarında 30'dan fazla hizmet içeren dinamik katalog",
+        "Şirket Kuruluşu Maliyet Hesaplayıcısı ve danışmanlık rezervasyon akışı",
+        "App Router ve SSR kullanan çok bölgeli SEO mimarisi",
+        "Kurumsal şirketler, KOBİ'ler, hızlı büyüyen işletmeler ve girişimler için özel yolculuklar",
+      ],
+    },
+    descriptions: {
+      ar: "Bridge MENA هي منصة لتوسّع الأعمال ترشد الشركات الدولية خلال دخول أسواق الإمارات والسعودية. تشمل تأسيس الشركات والموارد البشرية والرواتب والعلاقات الحكومية والمكاتب المجهزة واستراتيجيات النمو المتخصصة ومسار الاستشارات ومركز الموارد وحاسبة تكلفة تأسيس الأعمال.",
+    },
+  },
+  14: {
+    titles: {
+      ar: "SDR Mobile - المبيعات الميدانية",
+      tr: "SDR Mobil - Saha Satışı",
+    },
+    taglines: {
+      ar: "منصة إدارة المبيعات الميدانية عبر الجوال لكل صناعة وحجم",
+      tr: "Her Sektör ve Ölçek için Mobil Saha Satış Yönetim Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن تطبيق المبيعات الميدانية للجوال وتحسين المسارات ولوحات التقارير الفورية ووحدات تكامل ERP.",
+      tr: "Mobil satış uygulaması, rota optimizasyonu, gerçek zamanlı raporlama panelleri ve ERP entegrasyon modüllerinden sorumlu Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "تتبع المبيعات الميدانية الفوري مع تحسين المسارات بالاعتماد على GPS",
+        "المبيعات الساخنة وجمع الطلبات مع دعم العمل دون اتصال أولًا",
+        "إدارة زيارات العملاء مع التقاط الصور والتوقيعات",
+        "لوحة تقارير مركزية لتحليل أداء فريق المبيعات",
+        "تكامل ERP ومزامنة المخزون بين المستودعات",
+        "موثوق به من أكثر من 1,000 مستخدم ميداني في قطاعات السلع الاستهلاكية والتوزيع",
+      ],
+      tr: [
+        "GPS tabanlı rota optimizasyonu ile gerçek zamanlı saha satış takibi",
+        "Çevrimdışı öncelikli mobil destekle sıcak satış ve sipariş toplama",
+        "Fotoğraf ve imza yakalama akışlarıyla müşteri ziyaret yönetimi",
+        "Satış ekibi performans analizleri için merkezi raporlama paneli",
+        "ERP entegrasyonu ve çoklu depo envanter senkronizasyonu",
+        "FMCG ve dağıtım sektörlerinde 1.000'den fazla saha kullanıcısı tarafından kullanılıyor",
+      ],
+    },
+  },
+  15: {
+    titles: {
+      ar: "Three-S - إدارة الفرق الميدانية",
+      tr: "Three-S - Saha Ekibi Yönetimi",
+    },
+    taglines: {
+      ar: "منصة إدارة الفرق الميدانية والتسويق الميداني للعمليات الفورية",
+      tr: "Gerçek Zamanlı Operasyonlar için Saha Ekibi Yönetimi ve Merchandising Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن بناء منصة العمليات الميدانية ونظام إدارة المسارات ووحدات تتبع نقاط البيع ولوحات تحليل المنافسة.",
+      tr: "Saha operasyonları platformu, rota yönetim sistemi, POP takip modülleri ve rekabet analizi panellerini geliştiren Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "تخطيط المسارات وتتبع الفرق الميدانية عبر GPS مع التحقق من الزيارات",
+        "تتبع نقاط البيع ومراقبة الالتزام بعروض الرفوف",
+        "أدوات تحليل الأسعار التنافسية وقياس حصة الرفوف",
+        "تتبع المخزون والطلبات وإدارة المخزون على مستوى المتجر",
+        "الإبلاغ عن المشكلات وإدارة الملاحظات للعمليات الميدانية",
+        "يخدم أكثر من 5,000 مستخدم ميداني نشط مع جمع البيانات الفوري",
+      ],
+      tr: [
+        "Ziyaret doğrulamayla rota planlama ve GPS saha ekibi takibi",
+        "POP takibi ve raf sergileme uyumluluğu izleme",
+        "Rekabetçi fiyat analizi ve raf payı ölçüm araçları",
+        "Perakende seviyesinde stok takibi, sipariş ve envanter yönetimi",
+        "Saha operasyonları için sorun bildirme ve not yönetimi",
+        "Gerçek zamanlı veri toplamayla 5.000'den fazla aktif saha kullanıcısına hizmet",
+      ],
+    },
+  },
+  16: {
+    titles: {
+      ar: "SDR B2B - نظام التجارة الإلكترونية",
+      tr: "SDR B2B - E-Ticaret Sistemi",
+    },
+    taglines: {
+      ar: "منصة التجارة الإلكترونية بالجملة وإدارة الوكلاء بين الشركات",
+      tr: "B2B Toptan E-Ticaret ve Bayi Yönetim Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن هندسة منصة التجارة الإلكترونية بين الشركات ولوحة الإدارة ومعالجة الطلبات والمدفوعات وإدارة كتالوج المنتجات وبوابة الوكلاء.",
+      tr: "B2B e-ticaret platformu, yönetim paneli, sipariş/ödeme işleme, ürün kataloğu yönetimi ve bayi portalı mimarisinden sorumlu Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "متجر جملة إلكتروني يعمل على مدار الساعة لمعالجة الطلبات والمدفوعات بين الشركات",
+        "لوحة إدارة سهلة لإدارة كتالوج المنتجات والمخزون",
+        "أسعار وعروض مخصصة للوكلاء مع تتبع سجل الطلبات",
+        "سير عمل لإدارة الشحن وتنسيق الخدمات اللوجستية",
+        "تحليلات المبيعات وتقارير ذكاء أعمال مفصلة",
+        "بنية متعددة المستأجرين قابلة للتوسع مع نمو شبكة الوكلاء",
+      ],
+      tr: [
+        "B2B sipariş ve ödeme işlemleri için 7/24 çevrimiçi toptan mağaza",
+        "Ürün kataloğu ve envanter yönetimi için kullanımı kolay yönetim paneli",
+        "Bayiye özel fiyatlandırma, promosyonlar ve sipariş geçmişi takibi",
+        "Sevkiyat yönetimi ve lojistik koordinasyon iş akışları",
+        "Satış analizleri ve ayrıntılı iş zekâsı raporlaması",
+        "Büyüyen bayi ağları için ölçeklenebilir çok kiracılı mimari",
+      ],
+    },
+  },
+  1: {
+    titles: { ar: "FlowHR", tr: "FlowHR" },
+    taglines: {
+      ar: "منصة متطورة لإدارة الموارد البشرية والقوى العاملة",
+      tr: "Devrimci İK Yönetimi ve Çalışan İş Gücü Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن تصميم بنية الموارد البشرية الأساسية وفهرسة ملفات الموظفين وتتبع الحضور الآلي وصلاحيات الأقسام المعتمدة على الأدوار.",
+      tr: "Temel İK mimarisi, çalışan profili indeksleme, otomatik devam takibi ve rol tabanlı departman izinlerini tasarlayan Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "ملفات شاملة للموظفين وإدارة الأدوار ورسم هيكل المؤسسة",
+        "نظام آلي لتتبع الإجازات مع سير عمل الطلبات ومتابعة الأرصدة",
+        "مراقبة فورية للوقت والحضور مع إمكانية تسجيل الدخول عبر تحديد النطاق الجغرافي",
+        "تحكم آمن بالوصول قائم على الأدوار لضمان الامتثال وخصوصية البيانات",
+        "لوحة تحليلات مفصلة مع صيغ تقارير قابلة للتصدير لمديري الموارد البشرية",
+        "إعداد سحابي قابل للتوسع يدعم هياكل الأقسام متعددة المستويات",
+      ],
+      tr: [
+        "Kapsamlı çalışan profilleri, rol yönetimi ve organizasyon yapısı haritalama",
+        "Başvuru akışları ve bakiye takibi içeren otomatik izin takip sistemi",
+        "Coğrafi sınırlandırmalı giriş özelliğiyle gerçek zamanlı zaman ve devam takibi",
+        "Uyumluluk ve veri gizliliğini güvence altına alan rol tabanlı erişim kontrolü",
+        "İK yöneticileri için dışa aktarılabilir rapor formatlarına sahip ayrıntılı analiz paneli",
+        "Çok departmanlı hiyerarşi yapılarını destekleyen ölçeklenebilir bulut kurulumu",
+      ],
+    },
+  },
+  6: {
+    titles: { ar: "Rankify", tr: "Rankify" },
+    taglines: {
+      ar: "منصة SaaS لتسويق تحسين محركات البحث وتحسين المواقع",
+      tr: "SaaS SEO Pazarlama ve Web Sitesi Optimizasyon Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack مسؤول عن بناء تطبيق SaaS ولوحات التحليلات وخوارزميات تتبع SEO ووحدات التسجيل والتسعير المتكاملة للعملاء.",
+      tr: "SaaS uygulaması, analiz panelleri, SEO takip algoritmaları ve entegre müşteri kayıt/fiyatlandırma modüllerini geliştiren Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "لوحة تحليلات متقدمة مع مخططات للمقاييس الأساسية ورؤى قائمة على البيانات",
+        "مكتبة قوالب قابلة للتخصيص ومتوافقة مع هوية العلامة التجارية",
+        "أدوات SEO مدمجة وشاملة لتحسين البحث والترتيب",
+        "أدوات آلية لتوليد العملاء المحتملين وجذب العملاء ذوي الجودة",
+        "تصميم متجاوب مع الجوال ومحسّن للأداء عبر الأجهزة المختلفة",
+        "إدارة متكاملة لوسائل التواصل وحملات التسويق عبر البريد الإلكتروني",
+      ],
+      tr: [
+        "Temel metrik grafikleri ve veri odaklı içgörüler içeren gelişmiş analiz paneli",
+        "Marka kimliğiyle uyumlu özelleştirilebilir şablon kütüphanesi",
+        "Arama optimizasyonu ve sıralama için kapsamlı yerleşik SEO araçları",
+        "Kaliteli aday müşterileri yakalayıp beslemek için otomatik müşteri adayı oluşturma araçları",
+        "Cihazlar arası sorunsuz performans için optimize edilmiş mobil uyumlu tasarım",
+        "Entegre sosyal medya yönetimi ve e-posta pazarlama kampanyası iş akışları",
+      ],
+    },
+  },
+  3: {
+    titles: {
+      ar: "ميساس - السوق الافتراضي",
+      tr: "Misas - Sanal Market",
+    },
+    taglines: {
+      ar: "منصة متكاملة للتجارة الإلكترونية للبقالة وإدارة التوصيل الهجينة",
+      tr: "Çevrimiçi Market E-Ticaret ve Hibrit Teslimat Yönetim Platformu",
+    },
+    roles: {
+      ar: "مطور Full-Stack يقود تطوير منصة تجارة البقالة الإلكترونية وتطبيقات الجوال الهجينة ونظام كتالوج المنتجات وبوابة إدارة التوصيل.",
+      tr: "Market e-ticaret web platformu, hibrit mobil uygulamalar, ürün kataloğu sistemi ve teslimat yönetim portalının geliştirilmesine liderlik eden Full-Stack Developer.",
+    },
+    highlights: {
+      ar: [
+        "نظام اختيار وجدولة الفترات الزمنية لتوصيل طلبات العملاء",
+        "كتالوج ويب متجاوب مع تصفية فورية للفئات والبحث",
+        "تطبيق جوال هجين لنظامي iOS وAndroid مع مزامنة السلة",
+        "تكاملات آمنة لبوابة الدفع الإلكتروني ونقاط المكافآت",
+        "لوحة فورية لتوزيع الطلبات وتتبع مسارات التوصيل",
+        "بنية قاعدة بيانات قوية محسنة لأكثر من 10,000 منتج وطلب يومي",
+      ],
+      tr: [
+        "Müşteri teslimat zaman aralığı seçimi ve planlama sistemi",
+        "Anında kategori filtreleme ve arama özellikli duyarlı web kataloğu",
+        "Sepet senkronizasyonuna sahip hibrit iOS ve Android mobil uygulama",
+        "Güvenli çevrimiçi ödeme ve sadakat puanı entegrasyonları",
+        "Gerçek zamanlı sipariş dağıtımı ve teslimat rota takibi paneli",
+        "10.000'den fazla ürün ve günlük sipariş için optimize edilmiş güçlü veritabanı yapısı",
+      ],
+    },
+  },
+  17: {
+    titles: {
+      ar: "نظام معلومات هيئة الموانئ البحرية (MPAIS)",
+      tr: "Deniz Limanları Otoritesi Bilgi Sistemi (MPAIS)",
+    },
+  },
+  18: {
+    titles: {
+      ar: "معالج البيانات الهيدروغرافية ومصمم النماذج الباثيمترية EA400",
+      tr: "EA400 Hidrografik Veri İşleyici ve Batimetrik Modelleyici",
+    },
+  },
+};
+
 const buildProjects = (locale) =>
   sharedProjects
-    .map((project) => ({
-      ...project,
-      description: project.descriptions[locale],
-      tagline: project.taglines?.[locale] ?? project.tagline,
-      role: project.roles?.[locale] ?? project.role,
-      highlights: project.highlightsByLocale?.[locale] ?? project.highlights,
-    }))
+    .map((project) => {
+      const translations = projectTranslations[project.id] ?? {};
+
+      return {
+        ...project,
+        title: translations.titles?.[locale] ?? project.title,
+        description:
+          translations.descriptions?.[locale] ??
+          project.descriptions?.[locale] ??
+          project.descriptions?.[defaultLocale] ??
+          "",
+        tagline:
+          translations.taglines?.[locale] ??
+          project.taglines?.[locale] ??
+          project.tagline,
+        role:
+          translations.roles?.[locale] ?? project.roles?.[locale] ?? project.role,
+        highlights:
+          translations.highlights?.[locale] ??
+          project.highlightsByLocale?.[locale] ??
+          project.highlights,
+      };
+    })
     .sort(
       (projectA, projectB) =>
         Number(Boolean(projectB.featured)) - Number(Boolean(projectA.featured)),
@@ -618,11 +923,13 @@ export const dictionaries = {
     },
     nav: {
       ariaLabel: "Main navigation",
+      skipToContent: "Skip to content",
       logoLabel: "Go to homepage",
       openMenu: "Open navigation menu",
       closeMenu: "Close navigation menu",
       languageToggleLabel: "Switch to Arabic",
       links: [
+        { title: "Experience", path: "#experience" },
         { title: "About", path: "#about" },
         { title: "Projects", path: "#projects" },
         { title: "Contact", path: "#contact" },
@@ -656,6 +963,32 @@ export const dictionaries = {
       items: [
         { metric: "Projects", value: "20", postfix: "+" },
         { metric: "Years of Experience", value: "6", postfix: "+" },
+      ],
+    },
+    experience: {
+      eyebrow: "Experience snapshot",
+      heading: "Building products from systems to interfaces",
+      description:
+        "I bring 6+ years of full-stack experience across production web applications, internal tools, and data-heavy platforms — from backend architecture to polished user interfaces.",
+      items: [
+        {
+          label: "Current role",
+          title: "Full Stack Developer",
+          organization: "Techtile · Germany · Remote",
+          description:
+            "Building production-grade applications with Next.js, TypeScript, Node.js, Express.js, and PostgreSQL.",
+          tagsLabel: "Current role technologies",
+          tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+        },
+        {
+          label: "Domain experience",
+          title: "Cross-industry product delivery",
+          organization: "HR · Maritime · E-commerce · SaaS",
+          description:
+            "Designing end-to-end workflows, dashboards, APIs, role-based access, and multilingual experiences for different operational teams.",
+          tagsLabel: "Areas of experience",
+          tags: ["Dashboards", "RBAC", "APIs", "Multilingual"],
+        },
       ],
     },
     about: {
@@ -703,6 +1036,24 @@ export const dictionaries = {
     },
     projects: {
       heading: "My Projects",
+      featured: {
+        eyebrow: "Selected work",
+        heading: "A closer look at complex products",
+        description:
+          "These projects highlight the kind of systems I enjoy building: operationally important, data-heavy, and designed for real users.",
+        viewDetails: "View project details",
+      },
+      details: {
+        backToPortfolio: "Back to portfolio",
+        selectedWork: "Selected case study",
+        overview: "Project overview",
+        responsibilities: "My responsibilities",
+        highlights: "Key highlights",
+        technologies: "Technologies",
+        visitLive: "Visit live project",
+        viewSource: "View source code",
+        watchDemo: "Watch demo",
+      },
       filtersLabel: "Filter projects by type",
       resultsCount: "Showing {shown} of {total} projects",
       showMoreProjects: "Show more projects",
@@ -718,20 +1069,27 @@ export const dictionaries = {
         github: "GitHub",
         liveDemo: "Live Demo",
         watchDemo: "Watch Demo",
+        closeModal: "Close video dialog",
+        previousImage: "Previous image",
+        nextImage: "Next image",
+        goToImage: "Go to image {index}",
       },
       items: buildProjects("en"),
     },
-    contact: {
-      heading: "Let's Work Together",
-      description:
-        "I'm currently open to full-time remote roles and freelance projects. Feel free to reach out - I respond within 24 hours.",
-      githubLabel: "Visit Mohamad Karbejha on GitHub",
-      linkedinLabel: "Visit Mohamad Karbejha on LinkedIn",
+      contact: {
+        heading: "Let's Work Together",
+        description:
+          "I'm currently open to full-time remote roles and freelance projects. Feel free to reach out - I respond within 24 hours.",
+        nameLabel: "Your name",
+        namePlaceholder: "Enter your name",
+        githubLabel: "Visit Mohamad Karbejha on GitHub",
+        linkedinLabel: "Visit Mohamad Karbejha on LinkedIn",
       success: "Email sent successfully!",
       successFollowUp: "I'll get back to you soon.",
       emailLabel: "Your email",
       emailPlaceholder: "Enter your email",
-      emailErrorPrefix: "Email",
+        emailErrorPrefix: "Email",
+        emailLinkLabel: "Email Mohamad Karbejha directly",
       subjectLabel: "Subject",
       subjectPlaceholder: "Enter the subject",
       messageLabel: "Message",
@@ -773,11 +1131,13 @@ export const dictionaries = {
     },
     nav: {
       ariaLabel: "التنقل الرئيسي",
+      skipToContent: "الانتقال إلى المحتوى",
       logoLabel: "الانتقال إلى الصفحة الرئيسية",
       openMenu: "فتح قائمة التنقل",
       closeMenu: "إغلاق قائمة التنقل",
       languageToggleLabel: "التبديل إلى الإنجليزية",
       links: [
+        { title: "الخبرة", path: "#experience" },
         { title: "نبذة", path: "#about" },
         { title: "المشاريع", path: "#projects" },
         { title: "تواصل", path: "#contact" },
@@ -813,6 +1173,32 @@ export const dictionaries = {
       items: [
         { metric: "مشروعاً", value: "20", postfix: "+" },
         { metric: "سنوات خبرة", value: "6", postfix: "+" },
+      ],
+    },
+    experience: {
+      eyebrow: "لمحة عن الخبرة",
+      heading: "أبني المنتجات من الأنظمة الخلفية حتى الواجهات",
+      description:
+        "أمتلك أكثر من 6 سنوات من الخبرة في تطوير المنتجات المتكاملة، من تطبيقات الويب الجاهزة للإنتاج إلى الأدوات الداخلية والمنصات التي تعتمد على البيانات.",
+      items: [
+        {
+          label: "الدور الحالي",
+          title: "مطور Full Stack",
+          organization: "Techtile · ألمانيا · عن بعد",
+          description:
+            "أبني تطبيقات جاهزة للإنتاج باستخدام Next.js وTypeScript وNode.js وExpress.js وPostgreSQL.",
+          tagsLabel: "تقنيات الدور الحالي",
+          tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+        },
+        {
+          label: "خبرة في مجالات متعددة",
+          title: "تطوير منتجات متكاملة",
+          organization: "الموارد البشرية · الأنظمة البحرية · التجارة الإلكترونية · SaaS",
+          description:
+            "أصمم سير العمل ولوحات التحكم وواجهات API والصلاحيات وتجارب الاستخدام متعددة اللغات لفرق تشغيلية مختلفة.",
+          tagsLabel: "مجالات الخبرة",
+          tags: ["لوحات التحكم", "RBAC", "واجهات API", "متعدد اللغات"],
+        },
       ],
     },
     about: {
@@ -860,6 +1246,24 @@ export const dictionaries = {
     },
     projects: {
       heading: "مشاريعي",
+      featured: {
+        eyebrow: "أعمال مختارة",
+        heading: "نظرة أقرب على منتجات معقدة",
+        description:
+          "تعكس هذه المشاريع نوع الأنظمة التي أحب بناءها: منتجات مهمة تشغيلياً، تعتمد على البيانات، ومصممة لمستخدمين حقيقيين.",
+        viewDetails: "عرض تفاصيل المشروع",
+      },
+      details: {
+        backToPortfolio: "العودة إلى معرض الأعمال",
+        selectedWork: "دراسة حالة مختارة",
+        overview: "نظرة عامة على المشروع",
+        responsibilities: "مسؤولياتي",
+        highlights: "أبرز ما تم بناؤه",
+        technologies: "التقنيات",
+        visitLive: "زيارة المشروع",
+        viewSource: "عرض الكود المصدري",
+        watchDemo: "مشاهدة الفيديو",
+      },
       filtersLabel: "تصفية المشاريع حسب النوع",
       resultsCount: "عرض {shown} من أصل {total} مشروعًا",
       showMoreProjects: "عرض المزيد من المشاريع",
@@ -875,20 +1279,27 @@ export const dictionaries = {
         github: "GitHub",
         liveDemo: "عرض مباشر",
         watchDemo: "فيديو توضيحي",
+        closeModal: "إغلاق نافذة الفيديو",
+        previousImage: "الصورة السابقة",
+        nextImage: "الصورة التالية",
+        goToImage: "الانتقال إلى الصورة {index}",
       },
       items: buildProjects("ar"),
     },
-    contact: {
-      heading: "لنعمل معاً",
-      description:
-        "أنا متاح حالياً لأدوار بدوام كامل عن بعد ومشاريع مستقلة. لا تتردد في التواصل، أجيب عادة خلال 24 ساعة.",
-      githubLabel: "زيارة محمد كربجها على GitHub",
+      contact: {
+        heading: "لنعمل معاً",
+        description:
+          "أنا متاح حالياً لأدوار بدوام كامل عن بعد ومشاريع مستقلة. لا تتردد في التواصل، أجيب عادة خلال 24 ساعة.",
+        nameLabel: "اسمك",
+        namePlaceholder: "أدخل اسمك",
+        githubLabel: "زيارة محمد كربجها على GitHub",
       linkedinLabel: "زيارة محمد كربجها على LinkedIn",
       success: "تم إرسال الرسالة بنجاح!",
       successFollowUp: "سأعود إليك قريباً.",
       emailLabel: "بريدك الإلكتروني",
       emailPlaceholder: "أدخل بريدك الإلكتروني",
-      emailErrorPrefix: "البريد الإلكتروني",
+        emailErrorPrefix: "البريد الإلكتروني",
+        emailLinkLabel: "إرسال بريد إلكتروني مباشرة إلى محمد كربجها",
       subjectLabel: "الموضوع",
       subjectPlaceholder: "أدخل الموضوع",
       messageLabel: "الرسالة",
@@ -930,11 +1341,13 @@ export const dictionaries = {
     },
     nav: {
       ariaLabel: "Ana menü",
+      skipToContent: "İçeriğe geç",
       logoLabel: "Ana sayfaya git",
       openMenu: "Menüyü aç",
       closeMenu: "Menüyü kapat",
       languageToggleLabel: "Dili değiştir",
       links: [
+        { title: "Deneyim", path: "#experience" },
         { title: "Hakkımda", path: "#about" },
         { title: "Projeler", path: "#projects" },
         { title: "İletişim", path: "#contact" },
@@ -971,6 +1384,32 @@ export const dictionaries = {
       items: [
         { metric: "Proje", value: "20", postfix: "+" },
         { metric: "Yıllık Deneyim", value: "6", postfix: "+" },
+      ],
+    },
+    experience: {
+      eyebrow: "Deneyim özeti",
+      heading: "Sistemlerden arayüzlere ürünler geliştiriyorum",
+      description:
+        "Üretime hazır web uygulamalarından veri odaklı platformlara kadar uçtan uca ürün geliştirmede 6 yıldan fazla full-stack deneyime sahibim.",
+      items: [
+        {
+          label: "Mevcut rol",
+          title: "Full Stack Developer",
+          organization: "Techtile · Almanya · Uzaktan",
+          description:
+            "Next.js, TypeScript, Node.js, Express.js ve PostgreSQL kullanarak üretime hazır uygulamalar geliştiriyorum.",
+          tagsLabel: "Mevcut rol teknolojileri",
+          tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+        },
+        {
+          label: "Alan deneyimi",
+          title: "Farklı sektörlerde ürün geliştirme",
+          organization: "İK · Denizcilik · E-ticaret · SaaS",
+          description:
+            "Farklı operasyon ekipleri için uçtan uca iş akışları, gösterge panelleri, API'ler, rol tabanlı erişim ve çok dilli deneyimler tasarlıyorum.",
+          tagsLabel: "Deneyim alanları",
+          tags: ["Paneller", "RBAC", "API'ler", "Çok dilli"],
+        },
       ],
     },
     about: {
@@ -1021,6 +1460,24 @@ export const dictionaries = {
     },
     projects: {
       heading: "Projelerim",
+      featured: {
+        eyebrow: "Seçili çalışmalar",
+        heading: "Karmaşık ürünlere daha yakından bakış",
+        description:
+          "Bu projeler; operasyonel olarak önemli, veri odaklı ve gerçek kullanıcılar için tasarlanan sistemleri nasıl geliştirdiğimi gösterir.",
+        viewDetails: "Proje ayrıntılarını görüntüle",
+      },
+      details: {
+        backToPortfolio: "Portföye dön",
+        selectedWork: "Seçili vaka çalışması",
+        overview: "Proje özeti",
+        responsibilities: "Sorumluluklarım",
+        highlights: "Öne çıkanlar",
+        technologies: "Teknolojiler",
+        visitLive: "Canlı projeyi ziyaret et",
+        viewSource: "Kaynak kodunu görüntüle",
+        watchDemo: "Demoyu izle",
+      },
       filtersLabel: "Projeleri türüne göre filtrele",
       resultsCount: "{total} projeden {shown} tanesi gösteriliyor",
       showMoreProjects: "Daha fazla proje göster",
@@ -1036,20 +1493,27 @@ export const dictionaries = {
         github: "GitHub",
         liveDemo: "Canlı Demo",
         watchDemo: "Demoyu İzle",
+        closeModal: "Video penceresini kapat",
+        previousImage: "Önceki görsel",
+        nextImage: "Sonraki görsel",
+        goToImage: "{index}. görsele git",
       },
       items: buildProjects("tr"),
     },
-    contact: {
-      heading: "Birlikte Çalışalım",
-      description:
-        "Şu anda tam zamanlı uzaktan pozisyonlara ve serbest projelere açığım. İletişime geçmekten çekinmeyin - 24 saat içinde yanıt veriyorum.",
-      githubLabel: "Mohamad Karbejha'yı GitHub'da ziyaret edin",
+      contact: {
+        heading: "Birlikte Çalışalım",
+        description:
+          "Şu anda tam zamanlı uzaktan pozisyonlara ve serbest projelere açığım. İletişime geçmekten çekinmeyin - 24 saat içinde yanıt veriyorum.",
+        nameLabel: "Adınız",
+        namePlaceholder: "Adınızı girin",
+        githubLabel: "Mohamad Karbejha'yı GitHub'da ziyaret edin",
       linkedinLabel: "Mohamad Karbejha'yı LinkedIn'de ziyaret edin",
       success: "E-posta başarıyla gönderildi!",
       successFollowUp: "Yakında size döneceğim.",
       emailLabel: "E-posta adresiniz",
       emailPlaceholder: "E-posta adresinizi girin",
-      emailErrorPrefix: "E-posta",
+        emailErrorPrefix: "E-posta",
+        emailLinkLabel: "Mohamad Karbejha'ya doğrudan e-posta gönderin",
       subjectLabel: "Konu",
       subjectPlaceholder: "Konuyu girin",
       messageLabel: "Mesaj",
@@ -1090,3 +1554,9 @@ export const getLocalePath = (locale = defaultLocale) =>
 
 export const getLocalizedHref = (locale, hash = "") =>
   `${getLocalePath(locale)}${hash}`;
+
+export const getFeaturedProjects = (locale = defaultLocale) =>
+  getDictionary(locale).projects.items.filter((project) => project.featured);
+
+export const getProjectBySlug = (locale = defaultLocale, slug) =>
+  getDictionary(locale).projects.items.find((project) => project.slug === slug);

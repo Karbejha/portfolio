@@ -65,6 +65,35 @@ const AboutSection = ({ content, direction }) => {
     });
   };
 
+  const handleTabKeyDown = (event, index) => {
+    const isForward = direction === "rtl"
+      ? event.key === "ArrowLeft"
+      : event.key === "ArrowRight";
+    const isBackward = direction === "rtl"
+      ? event.key === "ArrowRight"
+      : event.key === "ArrowLeft";
+    let nextIndex = null;
+
+    if (isForward || event.key === "ArrowDown") {
+      nextIndex = (index + 1) % content.tabs.length;
+    } else if (isBackward || event.key === "ArrowUp") {
+      nextIndex = (index - 1 + content.tabs.length) % content.tabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = content.tabs.length - 1;
+    }
+
+    if (nextIndex === null) return;
+
+    event.preventDefault();
+    const nextTab = content.tabs[nextIndex];
+    handleTabChange(nextTab.id);
+    requestAnimationFrame(() => {
+      document.getElementById(`${nextTab.id}-tab`)?.focus();
+    });
+  };
+
   return (
     <section className="text-white" id="about" aria-labelledby="about-heading">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
@@ -95,13 +124,15 @@ const AboutSection = ({ content, direction }) => {
             role="tablist"
             aria-label={content.detailsLabel}
           >
-            {content.tabs.map((item) => (
+            {content.tabs.map((item, index) => (
               <TabButton
                 key={item.id}
                 id={`${item.id}-tab`}
                 controls={`${item.id}-panel`}
                 selectTab={() => handleTabChange(item.id)}
                 active={tab === item.id}
+                tabIndex={tab === item.id ? 0 : -1}
+                onKeyDown={(event) => handleTabKeyDown(event, index)}
               >
                 {item.title}
               </TabButton>

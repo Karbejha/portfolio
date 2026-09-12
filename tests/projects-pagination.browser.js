@@ -15,6 +15,7 @@ async (page) => {
     { path: "/ar/", more: "عرض المزيد من المشاريع", count: "عرض 6 من أصل 11 مشروعًا" },
     { path: "/tr/", more: "Daha fazla proje göster", count: "11 projeden 6 tanesi gösteriliyor" },
   ];
+  const englishProjectCopy = /^(Comprehensive Vessel Traffic|High-Performance Hydrographic|AI-powered Digital Twin|MENA's Leading Content|Full-Service MENA Market|Mobile Field Sales Management|Field Team Management & Merchandising|B2B Wholesale E-Commerce|Revolutionary HR Management|SaaS SEO Marketing & Website|Online Grocery E-Commerce)/;
 
   const checkCount = async (expected) => {
     await page.waitForFunction(
@@ -36,6 +37,34 @@ async (page) => {
       const cards = page.locator("#projects-list > li");
       const filters = section.locator("button[aria-pressed]");
       const more = section.getByRole("button", { name: locale.more, exact: true });
+      if (locale.path !== "/") {
+        const projectCopy = await cards.locator("h3, p.text-primary-400, [id$='-details'] > p").allTextContents();
+        assert(
+          !projectCopy.some((text) => englishProjectCopy.test(text.trim())),
+          `${locale.path} should not fall back to English project copy`,
+        );
+      }
+      assert(
+        JSON.stringify(await page.locator("[data-metric-value]").allTextContents()) ===
+          JSON.stringify(["20+", "6+"]),
+        "Achievement metrics render their real values",
+      );
+      assert(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+        ),
+        "The page fits the viewport without horizontal overflow",
+      );
+      assert(
+        await page.locator("[data-featured-projects] > ul > li").count() === 2,
+        "The selected work section contains the two featured projects",
+      );
+      const projectBasePath = locale.path === "/" ? "/" : locale.path;
+      assert(
+        await page.locator("[data-featured-projects] a").nth(0).getAttribute("href") === `${projectBasePath}projects/mpais/`
+          && await page.locator("[data-featured-projects] a").nth(1).getAttribute("href") === `${projectBasePath}projects/ea400/`,
+        "Featured projects link to their localized case studies",
+      );
       await checkCount(6);
       await more.scrollIntoViewIfNeeded();
       assert(await cards.count() === 11, "All projects must remain in the HTML");

@@ -3,6 +3,7 @@ import {
   getDictionary,
   getLocalePath,
   getLocaleSettings,
+  locales,
 } from "./i18n";
 
 export const siteConfig = {
@@ -97,14 +98,29 @@ export const siteConfig = {
   ],
 };
 
+const absoluteUrl = (path = "/") => `${siteConfig.url}${path}`;
+
 const languageAlternates = {
-  en: getLocalePath("en"),
-  ar: getLocalePath("ar"),
-  tr: getLocalePath("tr"),
-  "x-default": getLocalePath("en"),
+  en: absoluteUrl(getLocalePath("en")),
+  ar: absoluteUrl(getLocalePath("ar")),
+  tr: absoluteUrl(getLocalePath("tr")),
+  "x-default": absoluteUrl(getLocalePath("en")),
 };
 
-const absoluteUrl = (path = "/") => `${siteConfig.url}${path}`;
+const getProjectPath = (locale, slug) =>
+  `${getLocalePath(locale)}projects/${slug}/`;
+
+const getProjectImageUrl = (image) => {
+  if (!image) return undefined;
+
+  return image.startsWith("http") ? image : absoluteUrl(image);
+};
+
+const getProjectLanguageAlternates = (slug) =>
+  Object.fromEntries([
+    ...locales.map((locale) => [locale, absoluteUrl(getProjectPath(locale, slug))]),
+    ["x-default", absoluteUrl(getProjectPath(defaultLocale, slug))],
+  ]);
 
 export const getLocalizedMetadata = (locale = defaultLocale) => {
   const dictionary = getDictionary(locale);
@@ -149,13 +165,13 @@ export const getLocalizedMetadata = (locale = defaultLocale) => {
     openGraph: {
       type: "website",
       locale: settings.ogLocale,
-      url: path,
+      url: absoluteUrl(path),
       title: dictionary.seo.title,
       description: dictionary.seo.description,
       siteName: `${siteConfig.name} Portfolio`,
       images: [
         {
-          url: siteConfig.ogImage,
+          url: absoluteUrl(siteConfig.ogImage),
           width: 1476,
           height: 1461,
           alt: dictionary.seo.imageAlt,
@@ -166,7 +182,7 @@ export const getLocalizedMetadata = (locale = defaultLocale) => {
       card: "summary_large_image",
       title: dictionary.seo.title,
       description: dictionary.seo.description,
-      images: [siteConfig.ogImage],
+      images: [absoluteUrl(siteConfig.ogImage)],
     },
     robots: {
       index: true,
@@ -262,6 +278,74 @@ export const getStructuredData = (locale = defaultLocale) => {
         },
       },
     ],
+  };
+};
+
+export const getProjectMetadata = (locale = defaultLocale, project) => {
+  const settings = getLocaleSettings(locale);
+  const path = getProjectPath(locale, project.slug);
+  const title = project.title;
+  const socialTitle = `${project.title} | ${siteConfig.name}`;
+  const description = project.description;
+  const image = getProjectImageUrl(project.images?.[0] ?? project.image);
+
+  return {
+    title,
+    description,
+    keywords: [project.title, project.tagline, ...project.techStack],
+    metadataBase: new URL(siteConfig.url),
+    alternates: {
+      canonical: path,
+      languages: getProjectLanguageAlternates(project.slug),
+    },
+    openGraph: {
+      type: "article",
+      locale: settings.ogLocale,
+      url: absoluteUrl(path),
+      title: socialTitle,
+      description,
+      siteName: `${siteConfig.name} Portfolio`,
+      images: [
+        {
+          url: image,
+          alt: `${project.title} project screenshot`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: socialTitle,
+      description,
+      images: [image],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+};
+
+export const getProjectStructuredData = (locale = defaultLocale, project) => {
+  const pageUrl = absoluteUrl(getProjectPath(locale, project.slug));
+  const settings = getLocaleSettings(locale);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `${pageUrl}#project`,
+    name: project.title,
+    description: project.description,
+    url: pageUrl,
+    image: (project.images ?? [project.image]).map(getProjectImageUrl),
+    inLanguage: settings.htmlLang,
+    keywords: project.techStack,
+    about: project.tagline,
+    author: {
+      "@id": `${siteConfig.url}/#person`,
+    },
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
   };
 };
 

@@ -6,7 +6,15 @@ const variants = {
   active: { width: "calc(100% - 0.75rem)" },
 };
 
-const TabButton = ({ active, selectTab, children, controls, id }) => {
+const TabButton = ({
+  active,
+  selectTab,
+  children,
+  controls,
+  id,
+  onKeyDown,
+  tabIndex,
+}) => {
   const buttonClasses = active ? "text-white" : "text-[#ADB7BE]";
 
   return (
@@ -16,7 +24,9 @@ const TabButton = ({ active, selectTab, children, controls, id }) => {
       role="tab"
       aria-selected={active}
       aria-controls={controls}
+      tabIndex={tabIndex}
       onClick={selectTab}
+      onKeyDown={onKeyDown}
     >
       <span className={`me-3 font-semibold hover:text-white ${buttonClasses}`}>
         {children}

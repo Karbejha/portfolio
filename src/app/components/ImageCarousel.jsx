@@ -3,13 +3,16 @@
 import React, { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 
-const ImageCarousel = ({ images, alt }) => {
+const ImageCarousel = ({ images, alt, labels }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
   const isDragging = useRef(false);
 
   const totalImages = images.length;
+  const previousImageLabel = labels?.previousImage ?? "Previous image";
+  const nextImageLabel = labels?.nextImage ?? "Next image";
+  const goToImageLabel = labels?.goToImage ?? "Go to image {index}";
 
   const goTo = useCallback(
     (index) => {
@@ -81,8 +84,8 @@ const ImageCarousel = ({ images, alt }) => {
         src={images[0]}
         alt={alt}
         fill
-        sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-        className="object-contain"
+               sizes="(min-width: 768px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)"
+               className="object-contain"
       />
     );
   }
@@ -121,10 +124,9 @@ const ImageCarousel = ({ images, alt }) => {
               src={src}
               alt={`${alt} - ${index + 1}/${totalImages}`}
               fill
-              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-contain"
-              priority={index === 0}
-              draggable={false}
+               sizes="(min-width: 768px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)"
+               className="object-contain"
+               draggable={false}
             />
           </div>
           );
@@ -139,7 +141,7 @@ const ImageCarousel = ({ images, alt }) => {
           goPrev();
         }}
         className="absolute left-1 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all"
-        aria-label="Previous image"
+         aria-label={previousImageLabel}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="15 18 9 12 15 6" />
@@ -152,7 +154,7 @@ const ImageCarousel = ({ images, alt }) => {
           goNext();
         }}
         className="absolute right-1 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all"
-        aria-label="Next image"
+         aria-label={nextImageLabel}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="9 18 15 12 9 6" />
@@ -174,7 +176,7 @@ const ImageCarousel = ({ images, alt }) => {
                 ? "w-5 h-2 bg-primary-400"
                 : "w-2 h-2 bg-white/40 hover:bg-white/70"
             }`}
-            aria-label={`Go to image ${index + 1}`}
+             aria-label={goToImageLabel.replace("{index}", index + 1)}
             aria-current={index === currentIndex ? "true" : undefined}
           />
         ))}

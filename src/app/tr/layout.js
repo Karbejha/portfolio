@@ -1,6 +1,7 @@
 import "../globals.css";
 import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import MotionProvider from "../components/MotionProvider";
 import {
   getLocalizedMetadata,
   getStructuredData,
@@ -73,7 +74,7 @@ export default function TurkishRootLayout({ children }) {
             </Script>
           </>
         ) : null}
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

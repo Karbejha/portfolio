@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { CodeBracketIcon, EyeIcon, PlayIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -48,19 +48,28 @@ const ProjectCard = ({
   hideGitHubButton = false,
   previewUrl,
   labels,
-  priority = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoTriggerRef = useRef(null);
+  const dialogRef = useRef(null);
 
   useEffect(() => {
-    if (isVideoOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    if (!isVideoOpen) return undefined;
+
+    const previousActiveElement = document.activeElement;
+    const triggerElement = videoTriggerRef.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    dialogRef.current?.focus();
+
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = previousOverflow;
+      if (previousActiveElement instanceof HTMLElement) {
+        previousActiveElement.focus();
+      } else if (triggerElement instanceof HTMLElement) {
+        triggerElement.focus();
+      }
     };
   }, [isVideoOpen]);
 
@@ -101,17 +110,17 @@ const ProjectCard = ({
           <ImageCarousel
             images={images}
             alt={formatLabel(labels.imageAlt)}
+            labels={labels}
           />
         ) : (
           <>
-            <Image
-              src={imgUrl}
-              alt={formatLabel(labels.imageAlt)}
-              fill
-              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-contain"
-              priority={priority}
-            />
+              <Image
+                src={imgUrl}
+                alt={formatLabel(labels.imageAlt)}
+                fill
+                sizes="(min-width: 768px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)"
+                className="object-contain"
+              />
             <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-focus-within:flex group-hover:bg-opacity-80 group-focus-within:bg-opacity-80 transition-all duration-500">
               {hasGitUrl && (
                 <Link
@@ -240,6 +249,7 @@ const ProjectCard = ({
             <button
               type="button"
               onClick={() => setIsVideoOpen(true)}
+              ref={videoTriggerRef}
               className="inline-flex items-center gap-1.5 rounded-full border border-[#ADB7BE] px-3 py-1.5 text-xs md:text-sm text-[#ADB7BE] hover:border-white hover:text-white hover:bg-white/5 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-primary-400 shrink-0 whitespace-nowrap"
             >
               <PlayIcon className="h-3.5 w-3.5 md:h-4 md:w-4" />
@@ -263,6 +273,11 @@ const ProjectCard = ({
 
             {/* Modal Content container */}
             <motion.div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={`video-title-${projectId}`}
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -271,14 +286,17 @@ const ProjectCard = ({
             >
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-white/10 bg-[#181818]">
-                <h4 className="text-lg font-semibold text-white">
+                <h4
+                  id={`video-title-${projectId}`}
+                  className="text-lg font-semibold text-white"
+                >
                   {title} - {labels.watchDemo}
                 </h4>
                 <button
                   type="button"
                   onClick={() => setIsVideoOpen(false)}
                   className="p-1 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-400"
-                  aria-label="Close modal"
+                  aria-label={labels.closeModal}
                 >
                   <XMarkIcon className="h-6 w-6" />
                 </button>

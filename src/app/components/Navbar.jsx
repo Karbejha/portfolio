@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -12,6 +13,8 @@ const Navbar = ({ locale, nav, direction }) => {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const mobileDropdownRef = useRef(null);
+  const pathname = usePathname();
+  const router = useRouter();
   const homePath = getLocalePath(locale);
 
   useEffect(() => {
@@ -30,8 +33,13 @@ const Navbar = ({ locale, nav, direction }) => {
 
   const handleLanguageSwitch = (targetLocale) => {
     const hash = window.location.hash;
-    const path = getLocalePath(targetLocale);
-    window.location.href = `${path}${hash}`;
+    const currentPathname = pathname ?? window.location.pathname;
+    const pathWithoutLocale =
+      locale === "en"
+        ? currentPathname.replace(/^\/+/, "")
+        : currentPathname.slice(getLocalePath(locale).length);
+    const path = `${getLocalePath(targetLocale)}${pathWithoutLocale}`;
+    router.push(`${path}${hash}`);
   };
 
   return (
@@ -58,6 +66,9 @@ const Navbar = ({ locale, nav, direction }) => {
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              aria-label={nav.languageToggleLabel}
+              aria-expanded={langDropdownOpen}
+              aria-haspopup="menu"
               className="flex items-center rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-200 bg-[#181818] hover:border-white hover:text-white transition-all duration-200"
             >
               <svg
@@ -92,7 +103,10 @@ const Navbar = ({ locale, nav, direction }) => {
             </button>
 
             {langDropdownOpen && (
-              <ul className="absolute right-0 mt-2 py-1 w-28 bg-[#181818] border border-[#33353F] rounded-lg shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+              <ul
+                role="menu"
+                className="absolute right-0 mt-2 py-1 w-28 bg-[#181818] border border-[#33353F] rounded-lg shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+              >
                 <li>
                   <button
                     onClick={() => {
@@ -154,6 +168,9 @@ const Navbar = ({ locale, nav, direction }) => {
             <li>
               <div className="relative" ref={dropdownRef}>
                 <button
+                  aria-label={nav.languageToggleLabel}
+                  aria-expanded={langDropdownOpen}
+                  aria-haspopup="menu"
                   type="button"
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                   className="flex items-center rounded-full border border-[#33353F] px-4 py-2 text-sm font-semibold text-[#ADB7BE] bg-[#181818] hover:border-white hover:text-white transition-all duration-200"
@@ -190,7 +207,10 @@ const Navbar = ({ locale, nav, direction }) => {
                 </button>
 
                 {langDropdownOpen && (
-                  <ul className="absolute right-0 mt-2 py-1.5 w-36 bg-[#181818] border border-[#33353F] rounded-lg shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <ul
+                    role="menu"
+                    className="absolute right-0 mt-2 py-1.5 w-36 bg-[#181818] border border-[#33353F] rounded-lg shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+                  >
                     <li>
                       <button
                         onClick={() => {
